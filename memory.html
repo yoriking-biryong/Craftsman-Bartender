@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#ad4930"><meta name="description" content="수업에서 배우는 칵테일 22종. 레시피를 한눈에 읽고, 답을 가린 암기 카드로 반복해 보세요.">
+ <title>외워가는 22잔 · 조주 연습장</title>
+ <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest">
+ <link rel="preload" href="fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+ <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="memory.css"><link rel="stylesheet" href="memory-notes.css"><link rel="stylesheet" href="memory-drill.css"><link rel="stylesheet" href="memory-expansion.css">
+ <script defer src="data.js"></script><script defer src="art.js"></script><script defer src="memory-catalog.js"></script><script defer src="memory-quiz.js"></script><script defer src="memory-drill.js"></script><script defer src="memory.js"></script><script defer src="offline.js"></script>
+</head>
+<body class="memory-page">
+ <a class="skip" href="#main">본문으로 이동</a>
+ <header class="header"><div class="header-inner">
+  <a class="brand" href="index.html#practice" data-home-link><span class="seal" id="brand-mark"></span><span>조주 연습장<small>조주기능사 실기 노트</small></span></a>
+  <nav aria-label="주 메뉴"><a href="index.html#practice" data-home-link>실기 연습</a><a href="index.html#catalog" data-home-link>칵테일 도감 <span>40</span></a><a href="memory.html" class="active" aria-current="page">22종 암기</a><a href="index.html#notes" data-home-link>내 학습 노트</a></nav>
+  <span class="edition">COCKTAIL NOTES / 2026</span>
+ </div></header>
+ <main id="main" tabindex="-1">
+  <div class="memory-heading"><div><div class="eyebrow">MY COCKTAIL NOTES</div><h1>외워가는 <span>22잔.</span></h1><p>재료와 용량, 조주법, 잔, 가니시.<br>배운 메뉴를 묶어서 차근차근 기억해요.</p></div><div class="memory-score"><span>나의 암기 체크</span><b id="memory-count">0<small> / 22</small></b><span id="memory-remaining">22종 더 외워요</span></div></div>
+  <p class="memory-save-note">암기 체크는 이 브라우저에 저장됩니다. 실기 6단계 완료 기록과는 별도예요.</p>
+  <p id="memory-storage-warning" class="storage-warning" role="status" hidden></p>
+  <nav class="memory-modes" aria-label="암기 방법"><a href="#overview" id="mode-overview">한눈에 보기 <span>읽고 비교하기</span></a><a href="#cards" id="mode-cards">가리고 외우기 <span>기억 꺼내기</span></a><a href="#quiz" id="mode-quiz">빈칸 퀴즈 <span>재료·용량 입력</span></a><a href="#drill" id="mode-drill">종합 퀴즈 <span>고르고·배치하기</span></a></nav>
+  <section id="memory-content" aria-label="22종 암기 자료"></section>
+  <p class="memory-source">기존 연습장의 큐넷 2026 표준 레시피를 그대로 사용합니다. 용량은 원문 단위로 외워 주세요. <a href="index.html#sources" data-home-link>출처·단위 안내 ↗</a><br>불바디에의 영문 이름은 Boulevardier입니다. 잔 그림은 학습용 도식입니다.</p>
+ </main>
+ <footer><span>조주 연습장 · 한 잔씩 기억에 남도록.</span><div class="footer-links"><span id="offline-status">오프라인 준비 확인 중</span><a href="index.html#practice" data-home-link>실기 연습으로 ↗</a></div></footer>
+ <div class="sr-only" id="memory-status" role="status" aria-live="polite"></div>
+
+ <template id="memory-mnemonics-guide-template">
+  <details class="memory-mnemonics-guide">
+   <summary><strong>쉽게 외우는 암기법</strong><span>짝꿍 메뉴 · 숫자 덩어리 · 헷갈리는 단위</span></summary>
+   <div class="mnemonics-guide-body">
+    <p class="mnemonics-intro">먼저 각 카드의 <b>‘암기 한 줄’</b>을 소리 내어 읽어요. 그다음 <a href="#cards">가리고 외우기</a>에서 재료·용량·기법·잔·장식을 말해 보고, <a href="#quiz">빈칸 퀴즈</a>로 확인하세요. 막히면 암기 힌트만 먼저 펼칠 수 있어요.</p>
+    <div class="mnemonics-pairs">
+     <section><h3>① 러스티 ↔ 블랙</h3><p class="mnemonics-formula">기주 1 oz + 짝꿍 ½ oz</p><p>러스티: <b>스카치 + 드람뷔</b><br>블랙: <b>보드카 + 커피</b></p><p class="note-aside">둘 다 Build · 올드 패션드 잔 · 장식 없음. 두 병의 이름만 바꿔 말하기!</p></section>
+     <section><h3>② 모스코 ↔ 쿠바</h3><p class="mnemonics-formula">기주 1½ oz + 라임 ½ oz + 탄산 Fill</p><p>모스코: <b>보드카 + 진저 에일 + 슬라이스</b><br>쿠바: <b>라이트 럼 + 콜라 + 레몬 웨지</b></p><p class="note-aside">보·진·슬 ↔ 럼·콜·웨. 둘 다 Build, 하이볼 잔!</p></section>
+     <section><h3>③ 다이키리 ↔ 바카디</h3><p class="mnemonics-formula">럼 1¾ oz + 라임 ¾ oz + 단맛 1 tsp</p><p>다이키리: <b>라이트 럼 + 가루 설탕</b><br>바카디: <b>바카디 화이트 럼 + 그레나딘</b></p><p class="note-aside">가루 ↔ 빨간 시럽. 끝 숫자는 둘 다 ¾, 장식은 둘 다 없음.</p></section>
+     <section><h3>④ 사이드카 ↔ 애플 마티니</h3><p class="mnemonics-formula">기주 1 oz + 리큐르 1 oz + 신맛</p><p>사이드카: 브랜디·트리플 섹 + <b>레몬 ¼ oz</b><br>애플: 보드카·애플 퍼커 + <b>라임 ½ oz</b></p><p class="note-aside">사이드카는 ¼, 애플은 ½. 둘 다 Shake, 애플만 사과 장식!</p></section>
+    </div>
+    <div class="mnemonics-shortcuts">
+     <section><h3>같은 양이어도, 온스는 다르다</h3><p><b>불바디에</b> 버·베·캄 → <b>각 1 oz</b><br><b>알렉산더</b> 브·카·밀 → <b>각 ¾ oz</b><br><b>블루 하와이안</b> 술 세 병 → <b>각 1 oz</b>, 파인애플만 <b>2½ oz</b></p></section>
+     <section><h3>블렌더는 ‘피·블·마·버’</h3><p><b>피</b>나 콜라다 · <b>블</b>루 하와이안 · <b>마</b>이 타이 · <b>버</b>진 프루트 펀치</p><p class="note-aside">이번 22종 중 Blend는 이 네 잔. 필스너 잔과 과일·체리를 함께 떠올리기.</p></section>
+     <section><h3>석류는 메뉴마다 단위까지!</h3><p><b>뉴욕</b> ½ <b>tsp</b> · <b>바카디</b> 1 <b>tsp</b><br><b>마이 타이</b> ¼ <b>oz</b> · <b>버진 펀치</b> ½ <b>oz</b></p><p class="note-aside">‘뉴·바는 숟갈, 마·버는 온스.’ 코스모의 빨강은 석류가 아니라 크랜베리.</p></section>
+     <section><h3>순서에 예외가 있는 두 잔</h3><p><b>올드 패션드</b>는 설탕부터 녹이고 → 얼음·버번.<br><b>위스키 사워</b>는 소다를 빼고 Shake → 마지막에 소다 1 oz.</p><p class="note-aside">올드 패션드는 설탕 먼저, 위스키 사워는 소다만 마지막에 따로!</p></section>
+    </div>
+    <p class="mnemonics-caption">이 페이지의 22종 시험 레시피를 연결한 학습용 암기법입니다. 줄임말·숟갈은 외우기 위한 표현이며, 답을 적을 때는 재료 이름과 oz·tsp·dash·ea·Fill을 정확히 적어요.</p>
+   </div>
+  </details>
+ </template>
+
+ <template id="mnemonic-jj-02">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">버·베 2:1, 비터스는 톡!</span></summary><div class="mnemonic-body"><p><b>버</b>번 1½ oz + 스위트 <b>베</b>르무트 ¾ oz + 비터스 1 dash. 2:1은 비율이며, 2 oz·1 oz를 넣는다는 뜻이 아니에요.</p><p class="note-aside">맨해튼은 체리 하나 떠올리기. Stir → 얼음 없이 칵테일 잔.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-04">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">설·비·소 먼저, 얼·버 나중!</span></summary><div class="mnemonic-body"><p><b>설</b>탕 1 tsp → <b>비</b>터스 1 dash → <b>소</b>다 ½ oz로 녹이기 → <b>얼</b>음 → <b>버</b>번 1½ oz. 마지막에 가볍게 젓고 장식해요.</p><p class="note-aside">설탕이 있어도 Shake로 가지 않는 메뉴. 직접 잔에 Build, 오렌지 슬라이스 + 체리.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-11">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">뉴욕은 라임 반, 석류는 반 숟갈.</span></summary><div class="mnemonic-body"><p>버번 1½ oz + <b>라임 ½ oz</b> + 설탕 1 tsp + <b>그레나딘 ½ tsp</b>. 같은 ‘반’이어도 주스는 oz, 석류 시럽은 tsp예요.</p><p class="note-aside">빨간 뉴욕은 석류! 빨간 코스모는 크랜베리. Shake, 레몬 껍질 트위스트.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-10">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">레몬 반·설탕 하나, 소다는 나중에 하나.</span></summary><div class="mnemonic-body"><p>버번 1½ oz + <b>레몬 ½ oz</b> + <b>설탕 1 tsp</b>를 Shake. 잔에 따른 뒤 <b>소다 1 oz</b>를 On Top으로 넣어요.</p><p class="note-aside">사워 전용 잔 + 레몬 슬라이스·체리. 소다까지 흔들지 않기, 이 수업에서는 얹은 뒤 젓지 않기.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-40">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">버·베·캄, 한 온스씩.</span></summary><div class="mnemonic-body"><p><b>버</b>번·스위트 <b>베</b>르무트·<b>캄</b>파리 = 각각 <b>1 oz</b>. 세 병이 같은 양이에요.</p><p class="note-aside">같은 양인 알렉산더는 각각 ¾ oz! 불바디에는 Stir → 얼음 있는 잔 → 오렌지 트위스트.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-09">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">스카치 하나, 드람뷔 반.</span></summary><div class="mnemonic-body"><p><b>스카치 1 oz + 드람뷔 ½ oz</b>. 두 재료를 제공 잔에서 Build하고 장식 없이 마무리해요.</p><p class="note-aside">블랙 러시안과 양·기법·잔·무장식이 같음. 러스티는 스카치+드람뷔, 블랙은 보드카+커피.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-22">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">브·트 하나씩, 레몬은 4분의 1.</span></summary><div class="mnemonic-body"><p><b>브</b>랜디 1 oz + <b>트</b>리플 섹 1 oz + <b>레몬 ¼ oz</b>. 사이드카의 신맛은 유독 ¼로 기억해요.</p><p class="note-aside">애플 마티니도 앞의 두 재료가 1 oz씩. 사이드카는 레몬¼, 애플은 라임½. 둘 다 Shake, 사이드카는 장식 없음.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-05">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">브·카·밀, 4분의 3씩.</span></summary><div class="mnemonic-body"><p><b>브</b>랜디·크렘 드 <b>카</b>카오 브라운·라이트 <b>밀</b>크 = 각각 <b>¾ oz</b>. 비율은 1:1:1이지만 1 oz씩이 아니에요.</p><p class="note-aside">초코 우유 같은 세 재료를 하드 셰이킹. 마지막은 넛메그 가루, 함께 흔드는 재료 아님.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-28">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">사·베 ¾, 트 ¼, 레 ½.</span></summary><div class="mnemonic-body"><p><b>사</b>과 브랜디와 <b>베</b>네딕틴은 각각 ¾ oz. <b>트</b>리플 섹은 ¼ oz, <b>레</b>몬은 ½ oz. 이 줄은 모두 oz예요.</p><p class="note-aside">허니문 부부처럼 사과와 허브가 같은 양! 트리플 섹보다 레몬이 두 배. Shake, 장식 없음.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-38">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">생레몬 반 개, 설탕 두 숟갈, 소다 채워.</span></summary><div class="mnemonic-body"><p><b>생레몬 ½ ea</b>를 짜고 <b>설탕 2 tsp</b>, 소다 워터 <b>Fill</b>. 반 ‘개’와 티스푼 ‘두 개’를 묶어요.</p><p class="note-aside">기존 40종 표에서 가루 설탕 2 tsp는 이 메뉴. 레몬 주스 ½ oz와 구분! Build, 하이볼 잔, 레몬 슬라이스.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-39">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">오·파·크·자 하나, 레·그 반.</span></summary><div class="mnemonic-body"><p><b>오</b>렌지·<b>파</b>인애플·<b>크</b>랜베리·<b>자</b>몽은 각각 <b>1 oz</b>. <b>레</b>몬과 <b>그</b>레나딘은 각각 <b>½ oz</b>. 여섯 재료 = 과즙 다섯 + 시럽 하나.</p><p class="note-aside">라임 없이 레몬! Blend → 필스너 잔 → 파인애플 웨지 + 체리.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-07">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">보드카 하나, 커피 반.</span></summary><div class="mnemonic-body"><p><b>보드카 1 oz + 커피 리큐르 ½ oz</b>. 검은 커피가 ‘블랙’이라고 연결해요.</p><p class="note-aside">러스티 네일의 스카치·드람뷔만 보드카·커피로 바꿔 떠올리기. Build, 올드 패션드 잔, 장식 없음.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-26">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">보·라·진, 하나반·반·Fill.</span></summary><div class="mnemonic-body"><p><b>보</b>드카 1½ oz + <b>라</b>임 ½ oz + <b>진</b>저 에일 Fill. 여기서 ‘진’은 기주 Gin이 아니라 진저 에일이에요.</p><p class="note-aside">모스코는 슬라이스! 쿠바는 콜라와 웨지. 두 메뉴 모두 Build, 하이볼 잔.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-18">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">보·크·자, 하나반·셋·반.</span></summary><div class="mnemonic-body"><p><b>보</b>드카 <b>1½ oz</b> + <b>크</b>랜베리 <b>3 oz</b> + <b>자</b>몽 <b>½ oz</b>. 빨간 주스만 세 온스로 가장 많아요.</p><p class="note-aside">바닷바람에는 크랜베리와 자몽 두 주스. 라임 주스를 더하지 않기! Build, 하이볼 잔, 웨지.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-25">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">보드카만 하나, 트·라·크는 반씩.</span></summary><div class="mnemonic-body"><p><b>보드카 1 oz</b> + <b>트</b>리플 섹·<b>라</b>임·<b>크</b>랜베리 각각 <b>½ oz</b>. 하나 뒤에 반·반·반.</p><p class="note-aside">코스모의 빨강은 크랜베리. 뉴욕의 그레나딘과 바꾸지 않기. Shake, 칵테일 잔, 껍질 트위스트.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-19">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">보·애 하나씩, 라임은 반.</span></summary><div class="mnemonic-body"><p><b>보</b>드카 1 oz + <b>애</b>플 퍼커 1 oz + <b>라임 ½ oz</b>. 애플 퍼커는 사워 애플 리큐르예요.</p><p class="note-aside">사이드카와 1·1까지 같고 신맛만 ¼↔½로 비교. 애플은 라임, 사과 슬라이스! 이름에 마티니가 있어도 베르무트는 없음.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-24">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">럼 하나와 ¼, 믹스·파인은 둘씩.</span></summary><div class="mnemonic-body"><p><b>라이트 럼 1¼ oz</b> + <b>피나 콜라다 믹스 2 oz</b> + <b>파인애플 2 oz</b>. 큰 두 잔은 똑같이 둘.</p><p class="note-aside">럼 1¼는 마이 타이와 짝꿍. 시험에서는 믹스를 쓰고 Blend → 필스너 잔 → 파인애플 웨지 + 체리.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-29">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">럼·블루·코코 하나씩, 파인은 둘반.</span></summary><div class="mnemonic-body"><p><b>라이트 럼·블루 큐라소·코코넛 럼 각 1 oz</b> + <b>파인애플 2½ oz</b>. 술 세 병 하나씩, 주스만 둘반.</p><p class="note-aside">블루=파랑, 하와이=코코넛으로 연결. 이 시험 레시피에는 라임 없음! Blend, 필스너 잔, 파인애플 웨지 + 체리.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-23">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">술은 둘, 파라오 하나씩, 석류 ¼.</span></summary><div class="mnemonic-body"><p>두 술은 <b>라이트 럼 1¼ + 트리플 섹 ¾ = 2 oz</b>. <b>파</b>인애플·<b>라</b>임·<b>오</b>렌지 각 <b>1 oz</b>, 그레나딘 <b>¼ oz</b>.</p><p class="note-aside">파라오는 세 주스 이름의 앞글자! 럼의 끝 ¼와 석류¼를 연결. Blend, 파인애플(또는 오렌지) 웨지 + 체리.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-16">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">럼·라·콜, 하나반·반·Fill.</span></summary><div class="mnemonic-body"><p><b>럼</b> 1½ oz + <b>라</b>임 ½ oz + <b>콜</b>라 Fill. 모스코 뮬의 숫자를 그대로 연결해요.</p><p class="note-aside">콜라는 웨지! 쿠바의 장식은 레몬 웨지, 모스코는 슬라이스. 럼콕에 라임을 더한 조합, Build.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-12">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">럼은 하나와 ¾, 라임 ¾, 설탕 한 숟갈.</span></summary><div class="mnemonic-body"><p><b>라이트 럼 1¾ oz</b> + <b>라임 ¾ oz</b> + <b>설탕 1 tsp</b>. 럼과 라임의 끝 숫자는 둘 다 ¾.</p><p class="note-aside">다이키리는 가루 설탕, 바카디는 빨간 시럽. 둘 다 Shake, 칵테일 잔, 장식 없음.</p></div></details>
+ </template>
+ <template id="mnemonic-jj-15">
+  <details class="memory-mnemonic"><summary><span class="mnemonic-label">암기 한 줄</span><span class="mnemonic-chant">바카디 지정! 설탕 대신 빨간 한 숟갈.</span></summary><div class="mnemonic-body"><p><b>바카디 화이트 럼 1¾ oz</b> + <b>라임 ¾ oz</b> + <b>그레나딘 1 tsp</b>. 다이키리의 설탕을 같은 1 tsp 시럽으로 바꿔 떠올려요.</p><p class="note-aside">기주는 반드시 바카디 화이트 럼으로 기억. 그레나딘 1 oz가 아님! Shake, 칵테일 잔, 장식 없음.</p></div></details>
+ </template>
+ <template id="common-prep-template">
+  <section class="common-prep" aria-labelledby="common-prep-title">
+   <div class="common-prep-head"><h2 id="common-prep-title">공통 준비 · 만들기 전, 잔부터 차갑게</h2><span>전체 메뉴 공통 노트</span></div>
+   <div class="common-prep-brief"><p><b>시험 준비</b> 제출할 잔 3개를 먼저 고르고, 각 잔에 얼음 3개씩 넣어 옆에 두기.</p><p><b>계량 자세</b> 술을 받을 잔은 몸 앞에. 지거로 계량하고 가까이에서 따르기.</p></div>
+   <details class="common-prep-details"><summary>칠링·얼음·도구 준비 메모 펼치기</summary><div class="common-prep-grid">
+    <section><h3>시험과 업장의 칠링</h3><p>업장에서는 얼음을 넣고 스푼으로 저어 사전 칠링하거나, 냉동실에 보관한 잔을 꺼내 사용한다.</p><p class="note-aside">올드 패션드는 얼음과 함께 내는 잔이라 별도 사전 칠링은 생략하는 수업 방식. 시험 때 헷갈리면 일단 잔 3개를 모두 칠링해 두기. 설탕을 녹이기 전에는 칠링 얼음·물을 비운다.</p></section>
+    <section><h3>믹싱 글라스와 녹은 물</h3><p>Stir용 믹싱 글라스는 얼음과 스푼으로 미리 칠링한다. 계량 전에 스트레이너로 얼음을 잡고 녹은 물만 버린다.</p><p class="note-aside">수업에서 말한 ‘길고 투명한 쉐이킹 잔’. 잔 자체를 냉동실에 두기도 함. 업장에서는 얼음을 넉넉히 준비 — 너무 적으면 빨리 녹아 물이 많이 생긴다는 메모.</p></section>
+    <section><h3>레몬 껍질 손질</h3><p>껍질을 사용하는 메뉴는 흰 부분을 덜어내고 노란 부분 위주로 준비한다.</p><p class="note-aside">‘흰 부분을 없애듯 베어 노란 부분만!’ 껍질 가니시용 메모. 올드 패션드의 장식은 오렌지 슬라이스 + 체리.</p></section>
+   </div><p class="note-caption">얼음 개수와 준비 방식은 수업 메모이며, 실제 조주와 제출은 메뉴별 순서에 맞춰 진행합니다.</p></details>
+  </section>
+ </template>
+ <template id="manhattan-note-template">
+  <section class="recipe-notes manhattan-notes" aria-label="맨해튼 수업 노트">
+   <p class="note-cue">버번부터 계량 · Stir · 얼음 없이 제출</p>
+   <p class="note-taste"><span>한줄평</span> 깔끔함.............. 걍 깔끔한 술.</p>
+   <details class="recipe-note-details"><summary>맨해튼 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4 id="manhattan-notes-title">맨해튼 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="mn-layout">
+    <section class="mn-flow mn-practice" aria-labelledby="mn-flow-title"><h5 id="mn-flow-title">맨해튼, 실제로 손이 움직이는 순서</h5>
+     <p class="mn-small">스터링 약 3번·믹싱 글라스 80%·코스터 동작은 수업 메모. 재료와 용량은 위 표 기준.</p>
+     <ol>
+      <li><strong>바틀 열기 → 라벨 쇼잉</strong><p>병을 열고 <strong>라벨이 보이도록</strong> 잡는다. 재료를 확인하면서 계량 시작!</p></li>
+      <li><strong>버번 위스키 1 1/2 oz</strong><p>기주부터 지거링해서 믹싱 글라스에 따른다. <strong>켄터키 = 미국</strong>으로 연결!</p><p class="mn-small">시험용 병 암기: ‘켄터키 젠틀맨(Kentucky Gentleman)’. 실제 지급 병의 라벨을 확인하기.</p></li>
+      <li><strong>스위트 베르무트 3/4 oz</strong><p><strong>마티니 빨간 뚜껑 · Rosso.</strong> 지거로 계량해서 넣는다. 초록 뚜껑 Extra Dry와 헷갈리지 않기.</p></li>
+      <li><strong>앙고스투라 비터스 1 dash</strong><p>뚜껑을 열고, <strong>병과 잔을 ‘八’ 모양</strong>으로 잡는 동작을 떠올린다. 옆쪽으로 기울여 <strong>톡!</strong> 한 번 털기.</p><p class="mn-small">수업 동작 메모: 확 기울이면 비터스가 앞으로 튈 수 있으니 방향을 잡고 톡 털기.</p></li>
+      <li><strong>바스푼으로 스터링</strong><p><strong>시험 수업: 약 3번 젓기.</strong> 업장에서는 손등에 소량 떨어뜨려 보고 맛을 확인하는 <strong>테이스팅</strong>을 거쳐, 더 저을지 판단한다고 배움.</p><p class="mn-small">업장에서는 횟수만 세기보다 차가움·희석·맛의 균형을 확인하기.</p></li>
+      <li><strong>제출 잔의 칠링 얼음 버리기</strong><p>옆에 둔 <strong>V자 칵테일 글라스의 얼음과 녹은 물</strong>을 비운다. 이 맨해튼은 <strong>얼음 없이</strong> 담아 제출!</p><p class="mn-small">‘스템(stem)’은 잔의 다리. 여기서 ‘얼음 없음’은 이 맨해튼의 제공 방식으로 기억하기.</p></li>
+      <li><strong>스트레이너로 입구 잡기</strong><p><strong>용수철이 달린 스트레이너</strong>를 긴 믹싱 글라스 입구에 맞춰 잘 잡는다. 따를 때 혼합용 얼음이 함께 나오지 않도록 거른다.</p></li>
+      <li><strong>믹싱 글라스 80% 확인</strong><p><strong>술을 섞는 긴 믹싱 글라스의 80%를 넘기지 않기.</strong> 따르기 전, 수업에서 강조한 채움 기준과 흘리지 않을 여유를 확인한다.</p><p class="mn-small">80%는 V자 제출 잔이 아니라 믹싱 글라스 기준.</p></li>
+      <li><strong>V자 잔에 따르기 → 코스터로</strong><p>스트레이너로 걸러 <strong>칵테일 글라스에 먼저</strong> 따른다. 흘리지 않도록 완성 잔을 코스터로 옮긴다.</p><p class="mn-small">시험 수업 메모: 코스터 위에서 만들지 않기. 먼저 따르고, 그다음 코스터로!</p></li>
+      <li><strong>가니시 픽에 체리 꽂기</strong><p>이쑤시개처럼 생긴 <strong>가니시 픽</strong>에 체리를 꽂아 잔에 담고 마무리한다.</p></li>
+     </ol>
+     <p class="mn-order-reminder">라벨 → 버번 → 스위트 베르무트 → 비터스 → 스터링 → 제출 잔 비우기 → 거르기 → 따르기 → 코스터 → 체리</p>
+    </section>
+    <div class="mn-memos">
+     <section><h5>도시 이름을 보면, 나라부터!</h5><p>맨해튼·뉴욕은 도시명 → <strong>시티 칵테일</strong>로 연결해서 외우기. 이 두 메뉴의 시험 레시피는 미국의 <strong>버번 위스키</strong>를 사용한다.</p><p class="mn-highlight">버번 ↔ 시티 칵테일 ↔ 미국</p><p class="mn-small">맨해튼·뉴욕을 외우기 위한 연결 문장. 기주는 각 메뉴의 공식 레시피로 확인!</p></section>
+     <section><h5>기주와 부재료 구분하기</h5><p><strong>버번 위스키 = 기주.</strong><br>스위트 베르무트와 앙고스투라 비터스 = 부재료.<br><strong>베르무트 = 향을 더한 주정강화와인.</strong><br><strong>oz = 온스</strong>(여기서는 액량 온스).</p></section>
+     <section><h5>Stir, 그리고 한 번 툭!</h5><p><strong>Stir = 바스푼으로 저어 거름망으로 거르기.</strong><br><strong>dash = 한 번 툭 털기.</strong> 수업에서는 ‘3~5방울’로 기억.</p><p class="mn-small">원문 용량은 1 dash. 방울 수는 수업의 암기 메모이며, 병과 따르는 동작에 따라 나오는 양이 달라질 수 있어요.</p><p>앙고스투라는 <strong>병보다 큰 라벨</strong>로 기억! 형제가 병과 라벨을 따로 맡았다가 크기를 맞추지 못했다는 이야기.</p></section>
+     <section><h5>베르무트 병을 고를 때</h5><p><strong>MARTINI(마티니)</strong>는 베르무트를 만드는 브랜드. 여기서 ‘마티니’는 제품의 브랜드명으로 기억하기.</p><div class="mn-bottles"><div><span class="mn-cap mn-cap-green">초록 뚜껑</span><strong>Extra Dry</strong><span>드라이 베르무트 · 옅은색</span></div><div><span class="mn-cap mn-cap-red">빨간 뚜껑</span><strong>Rosso</strong><span>스위트 베르무트 · 붉은색</span></div></div><p class="mn-small">뚜껑 색은 수업에서 본 병의 암기 단서. 마지막에는 Extra Dry / Rosso 라벨을 확인하기. 완성된 베르무트의 색만으로 원료 와인의 색을 단정하지 않기.</p></section>
+     <section class="mn-reminder"><h5>기주 바꾸면 이름도 바뀐다</h5><p>맨해튼에 버번 대신 <strong>스카치 위스키</strong>를 쓰면 <strong>롭 로이(Rob Roy)</strong>로 연결된다. 국가와 기주를 헷갈리지 않게 조심!</p></section>
+     <section><h5>친자노도 같이 기억하기</h5><p><strong>Cinzano(친자노)</strong>도 이탈리아의 베르무트 브랜드. <strong>Rosso는 스위트 베르무트.</strong></p><p class="mn-quote">수업 메모: “빨간 뚜껑. 실기 시험에는 나오지 않음.”</p><p class="mn-small">시험에서 제공하는 브랜드는 시험장 지급 재료 안내로 확인.</p></section>
+    </div>
+   </div>
+   <details class="mn-sources"><summary>참고 자료 · 글꼴 출처</summary><p>수업 메모와 개인 평가는 사용자가 제공했습니다. 공식 레시피와 별도의 학습 설명입니다.</p><ul><li><a href="https://www.martini.com/products/martini-rosso/" target="_blank" rel="noopener noreferrer">MARTINI Rosso</a> · <a href="https://www.martini.com/products/martini-extra-dry/" target="_blank" rel="noopener noreferrer">MARTINI Extra Dry</a></li><li><a href="https://vinepair.com/articles/angostura-bitters-oversized-label/" target="_blank" rel="noopener noreferrer">앙고스투라 라벨 이야기</a> · <a href="https://library.cocktailkingdom.com/exh.essential-drinks.rob_roy.html" target="_blank" rel="noopener noreferrer">Rob Roy 설명</a></li><li><a href="https://espace-entreprises.pernod-ricard-france.com/nos-marques/cinzano.html" target="_blank" rel="noopener noreferrer">Cinzano 제품 안내</a></li><li><a href="https://www.diageobaracademy.com/en-zz/home/bartender-skills-and-techniques/the-subtle-art-of-cocktail-stirring" target="_blank" rel="noopener noreferrer">Diageo Bar Academy: 믹싱 글라스·스터링·거르기</a></li></ul><p>글꼴: <a href="https://www.knps.or.kr/portal/bandal/sub01.do" target="_blank" rel="noopener noreferrer">국립공원공단 ‘국립공원 꼬미’</a> · 공공누리 제1유형(출처표시). 공단의 후원·인증을 의미하지 않습니다.</p></details>
+   </div></details>
+  </section>
+ </template>
+ <template id="old-fashioned-note-template">
+  <section class="recipe-notes old-fashioned-notes" aria-label="올드 패션드 수업 노트">
+   <p class="note-cue">클래식 칵테일 · Build · 설탕부터 녹이기</p>
+   <p class="note-taste"><span>한줄평</span> 으 양주맛 붐따👎</p>
+   <details class="recipe-note-details"><summary>올드 패션드 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+    <header class="note-heading"><h4>올드 패션드 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+    <div class="note-basics"><p><b>Build(빌드)</b> 제공할 잔에 직접 재료를 넣어 완성하는 기법.</p><p class="note-aside">‘잔에 바로 지거링해서 따르기 = 소맥’으로 기억. 셰이킹하지 않는다.</p></div>
+    <section class="mn-flow mn-practice" aria-labelledby="of-flow-title"><h5 id="of-flow-title">실습 순서 · 기주보다 설탕 먼저</h5>
+     <ol>
+      <li><strong>가니시 먼저 준비</strong><p>오렌지 슬라이스와 체리를 픽에 꽂아 둔다. 잔을 미리 칠링했다면 얼음과 물을 비운다.</p><p class="note-aside">이 잔은 얼음과 함께 제공! 사전 칠링은 공통 준비 메모 참고.</p></li>
+      <li><strong>가루 설탕 1 tsp</strong><p>티스푼을 수평으로 깎아 계량하고, 빈 올드 패션드 잔에 넣는다.</p><p class="note-aside">Powdered Sugar = 가루 설탕. 수북하게 말고, 깎아서 한 스푼.</p></li>
+      <li><strong>앙고스투라 비터스 1 dash</strong><p>병을 기울여 한 번 톡 털어 설탕을 적신다.</p><p class="note-aside">원래 각설탕을 비터스로 적시는 동작으로 기억. 형제가 병·라벨 크기를 맞추지 못했다는 그 병!</p></li>
+      <li><strong>소다 워터 1/2 oz → 설탕 녹이기</strong><p>지거로 계량해 넣고 스푼으로 저어 설탕을 녹인다. 얼음과 기주는 아직 넣지 않는다.</p><p class="note-aside">소다 워터 = 탄산수. Club Soda도 탄산수. 여기서는 설탕을 녹이려고 조금 넣는다. 이것은 설탕을 푸는 동작이고, 조주법은 Build.</p></li>
+      <li><strong>얼음 넣기</strong><p>설탕을 녹인 뒤 잔에 얼음을 넣는다.</p><p class="note-aside">순서: 설탕 → 비터스 → 소다 → 녹이기 → 얼음. ‘기주 먼저’로 시작하지 않기.</p></li>
+      <li><strong>버번 위스키 1 1/2 oz</strong><p>기주를 계량하여 얼음 위로 따른다.</p><p class="note-aside">수업의 ‘얼음 표면을 코팅하듯’은 따르는 동작의 기억 표현. 얼음이 녹지 않는다는 원리로 외우지는 않기.</p></li>
+      <li><strong>가볍게 젓기 → 코스터</strong><p>바스푼으로 가볍게 섞고 완성 잔을 코스터로 옮긴다.</p><p class="note-aside">수업 메모: 마지막에 두세 번만. 탄산을 거칠게 휘젓지 않기. 이 레시피의 소다는 4번에서 이미 넣었으므로 다시 추가하지 않는다.</p></li>
+      <li><strong>준비한 가니시 올리기</strong><p>오렌지 슬라이스 + 체리 가니시를 잔 입구에 올려 마무리한다.</p><p class="note-aside">체리를 픽에 먼저 찌르고, 그 픽을 오렌지에 꽂기. 안정적으로 고정하면 된다.</p></li>
+     </ol>
+     <p class="mn-order-reminder">설탕 → 비터스 → 소다 → 녹이기 → 얼음 → 버번 → 가볍게 젓기 → 코스터 → 가니시</p>
+    </section>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>설탕·기법 암기</h5><p>오늘 외우는 9종 중 가루 설탕을 쓰는 메뉴: <b>올드 패션드 Build / 뉴욕 Shake / 위스키 사워 Shake·Build.</b></p><p class="note-aside">‘설탕 나오는 것 중 얘는 빌드!’라는 비교로 기억. 전체 40종에는 다른 Build 메뉴와 가루 설탕을 쓰는 프레시 레몬 스쿼시도 있다.</p><p class="note-aside">업장 메모: 좋은 각설탕·원당을 깨서 쓰기도 함. ‘마스코바토?’는 머스코바도(Muscovado, 비정제 사탕수수 설탕)를 말한 것일 수 있으나, 수업에서 본 각설탕 제품명은 미확인.</p><p class="note-aside">‘시간이 지나며 달아지게 설탕을 남기기’는 별도의 업장 스타일 메모. 이번 실습에서는 위 순서처럼 먼저 녹인다. ‘젓는 흉내’라는 수업 표현보다 실제로 설탕을 풀어 주는 동작으로 연습.</p></section>
+     <section class="note-topic"><h5>가니시 이름부터 확인</h5><p><b>오렌지 슬라이스 + 체리.</b> 40종 표에서 이 조합은 올드 패션드와 싱가포르 슬링에 사용한다.</p><p class="note-aside">‘슬라이스 오렌지’ → 수업에서는 반달 모양. 오렌지를 너무 얇게 썰면 픽에 꽂을 때 흐물거리니, 형태를 지탱할 두께로 자르기.</p><p class="note-aside">체리 먼저 픽에 찌르기 → 오렌지 슬라이스에 꽂기 → 잔 입구에. “걍 냅다 꽂아도 됨, 예쁘게 꾸미는 별도 형태는 안 배움”이라는 수업 메모.</p></section>
+     <section class="note-topic note-garnish"><h5>슬라이스 · 웨지 · 휠 구분</h5>
+      <div class="garnish-sketches" aria-label="가니시 모양 비교">
+       <figure><svg viewBox="0 0 80 60" role="img" aria-label="반달 모양 슬라이스"><path d="M9 18 A31 31 0 0 0 71 18Z" fill="#f5bd6a" stroke="#bb7229" stroke-width="3"/><path d="M15 20 A25 25 0 0 0 65 20M40 20v24m-3-24L22 37m21-17 15 17" fill="none" stroke="#fff5d9" stroke-width="2"/></svg><figcaption><b>슬라이스</b><span>반달 · 이번 장식</span></figcaption></figure>
+       <figure><svg viewBox="0 0 80 60" role="img" aria-label="쐐기 모양 웨지"><path d="M11 45 53 8Q70 24 64 49Z" fill="#f5bd6a" stroke="#bb7229" stroke-width="3"/><path d="m14 44 39-31q13 12 8 31ZM16 43l43-13" fill="none" stroke="#fff5d9" stroke-width="2"/></svg><figcaption><b>웨지</b><span>중심을 향한 쐐기</span></figcaption></figure>
+       <figure><svg viewBox="0 0 80 60" role="img" aria-label="동그란 휠"><circle cx="40" cy="30" r="26" fill="#f5bd6a" stroke="#bb7229" stroke-width="3"/><circle cx="40" cy="30" r="21" fill="none" stroke="#fff5d9" stroke-width="2"/><path d="M40 9v42M19 30h42M25 15l30 30M25 45l30-30" stroke="#fff5d9" stroke-width="2"/></svg><figcaption><b>휠</b><span>원형 · 비교용</span></figcaption></figure>
+      </div>
+      <ol class="note-cutting"><li>과일 양 끝의 꼭지 부분을 정리한다.</li><li>꼭지와 반대쪽 꼭지를 잇는 방향으로 길게 반을 가른다.</li><li><b>슬라이스:</b> 반쪽을 눕혀 길이 방향에 직각으로 썰면 반달.</li><li><b>웨지:</b> 길이 방향으로 중심을 향해 비스듬히 잘라 쐐기 모양.</li></ol>
+      <p class="note-aside">이미 손질된 덩어리 모양부터 보기! 웨지용을 슬라이스로, 슬라이스용을 웨지로 바꿔 쓰지 않기. 통과일을 가로로 자른 원형이 휠이며, 공식 표에는 ‘휠’이라는 가니시 명칭이 없다.</p>
+      <p class="note-caption">가니시 선택을 정확히 연습하기. 공개문제의 실격 기준은 3과제 중 2개 이상의 장식 선택 오류이며, 한 번의 모양 혼동을 곧바로 실격으로 단정하지 않습니다.</p>
+     </section>
+     <section class="note-topic"><h5>실습 때 들은 메모</h5><p class="note-aside">통과일로 나오면 첫 조가 처음 손질한다. 다음 조는 앞 조가 손질한 과일을 보게 되어 첫 조가 조금 불리하다는 수업 이야기. 실제 지급 상태는 당일 확인.</p><p class="note-aside">가니시는 모양 이름을 먼저 읽고 자르기. 오렌지는 얇게 저미지 말고 픽에 꽂혀 버틸 두께로. 최종 조립은 체리 → 오렌지, 마지막에 잔 입구!</p></section>
+    </div>
+    <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>실습 설명과 개인 평가는 사용자가 제공한 메모입니다. 재료·용량·조주법·가니시는 기존 2026년 표준 레시피를 유지합니다.</p><p><a href="https://www.q-net.or.kr/cst006.do?artlSeq=5250970&amp;brdId=Q006&amp;code=1204&amp;gId=&amp;gSite=Q&amp;id=cst00602" target="_blank" rel="noopener noreferrer">큐넷 2026년 실기 안내·공개문제</a> · <a href="https://www.billingtons.co.uk/our-products" target="_blank" rel="noopener noreferrer">Billington’s: Muscovado 제품 설명</a></p></details>
+   </div></details>
+  </section>
+ </template>
+ <template id="new-york-note-template">
+  <section class="recipe-notes new-york-notes" aria-label="뉴욕 수업 노트">
+   <p class="note-cue">시티 칵테일 · Shake · 그레나딘은 1/2 tsp</p>
+   <p class="note-taste"><span>한줄평</span> 생각보다 맛있지는 않았음...</p>
+   <details class="recipe-note-details"><summary>뉴욕 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+    <header class="note-heading"><h4>뉴욕 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+    <div class="note-basics"><p><b>라임 주스 1/2 oz · 가루 설탕 1 tsp · 그레나딘 시럽 1/2 tsp</b></p><p class="note-aside">같은 ‘1/2’라도 단위가 다름! 그레나딘은 온스가 아니라 티스푼. 이 실수 특히 조심.</p></div>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>먼저, 레몬 트위스트 준비</h5><ol class="note-cutting"><li>레몬의 <b>껍질만</b> 준비한다. 과육이 붙지 않도록 하고 흰 부분을 덜어낸다.</li><li>껍질 양 끝을 교차해 잡고, 모양을 만든다.</li><li>한 번 더 살짝 꼬아 눌러 트위스트 형태를 잡는다.</li></ol><p class="note-aside">칼질이 불안하면 집게로 고정해서 손이 칼날 쪽에 가지 않게 하기. 양 끝을 힘줘서 당기지 X — 잡고, 꼬고, 눌러서 형태만!</p></section>
+     <section class="note-topic"><h5>레몬 향과 마무리 메모</h5><p>뉴욕의 가니시는 <b>레몬 껍질 트위스트</b>. 준비한 껍질을 완성 잔에 가볍게 넣거나 얹어 마무리한다.</p><p class="note-aside">업장 메모: 껍질을 잔 가장자리에 문지르거나 잔 위에서 비틀어 향을 더하기. 수업에서는 “걍 잔에 던져서 넣어버려도 ㄱㅊ”라고 기억.</p></section>
+    </div>
+    <section class="mn-flow mn-practice" aria-labelledby="ny-flow-title"><h5 id="ny-flow-title">실습 순서 · 기법은 셰이킹</h5>
+     <ol>
+      <li><strong>칵테일 잔·셰이커에 얼음</strong><p>V자 칵테일 글라스에 칠링용 얼음을 넣어 옆에 둔다. 은색 셰이커 바디에는 혼합용 얼음을 넣는다.</p><p class="note-aside">잔에 넣은 얼음과 셰이커 안의 얼음은 용도가 다름. 잔 준비는 위 공통 메모 참고.</p></li>
+      <li><strong>버번 위스키 1 1/2 oz</strong><p>기주를 라벨 쇼잉하고 지거로 계량해 셰이커에 넣는다.</p><p class="note-aside">뉴욕도 시티 칵테일 → 미국 → 버번. 수업에서 본 병은 켄터키 젠틀맨(Kentucky Gentleman).</p></li>
+      <li><strong>라임 주스 1/2 oz</strong><p>부재료인 라임 주스를 계량해 넣는다.</p><p class="note-aside">시니까 뉴욕은 1/2 oz로 기억. 수업 동작 메모: 부재료는 라벨 쇼잉 생략.</p></li>
+      <li><strong>가루 설탕 1 tsp</strong><p>티스푼을 수평으로 깎아 한 스푼 넣는다.</p><p class="note-aside">수북하게 말고 깎아서! 설탕 등이 묻은 스푼은 다음 사용 전에 헹궈 정리.</p></li>
+      <li><strong>그레나딘 시럽 1/2 tsp</strong><p><b>1/2 oz가 아닌 1/2 tsp</b>를 계량해 넣는다. 사용한 스푼은 헹군다.</p><p class="note-aside">수업에서는 ‘석류 시럽, 색을 내는 재료’로 기억. 1 tsp 기준 스푼의 절반! 스푼 용량을 확인하고 계량.</p><p class="note-aside">안정적으로 따르기: 셰이커 입구 쪽에 스푼을 받쳐 병에서 따르거나, 지거에 조금 덜어 스푼으로 옮기기. 최종 양은 꼭 1/2 tsp.</p></li>
+      <li><strong>닫고 셰이킹</strong><p>셰이커를 닫고 뚜껑과 바디를 단단히 잡은 뒤 흔들어 섞고 차갑게 만든다.</p><p class="note-aside">수업에서 배운 방향: 뚜껑은 내 가슴 쪽을 향하게. 잡는 부분이 풀리지 않게 확인하고 셰이크.</p></li>
+      <li><strong>칠링 얼음 비우기 → 거르며 따르기</strong><p>칵테일 잔의 칠링 얼음과 녹은 물을 버린다. 스트레이너를 잘 잡고 셰이커의 얼음을 걸러 잔에 따른다.</p><p class="note-aside">수업 동작 메모: 스트레이너를 잡은 채 가볍게 움직이며 따라내기. 얼음은 셰이커에 남기고 칵테일만!</p></li>
+      <li><strong>레몬 트위스트 얹기</strong><p>미리 준비한 레몬 껍질 트위스트로 마무리한다.</p><p class="note-aside">과육 X, 껍질만. 힘줘 잡아당기지 말고 모양을 잡아 가볍게 넣기.</p></li>
+     </ol>
+     <p class="mn-order-reminder">얼음 준비 → 버번 → 라임 주스 → 설탕 → 그레나딘 → 셰이킹 → 칠링 얼음 비우기 → 거르기 → 레몬 트위스트</p>
+    </section>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>라임 주스와 라임 시럽 구분</h5><p>뉴욕의 표준 레시피는 <b>라임 주스</b>를 사용한다. 라임 시럽은 단맛을 더하는 별도 제품이므로 같은 재료로 바꿔 외우지 않는다.</p><p class="note-aside">“라임 시럽은 달아서 바에서는 안 쓰나?” → 라임 시럽도 칵테일용으로 쓰이는 제품이 있다. 사용하는지는 레시피와 업장 스타일에 따라 다름.</p></section>
+     <section class="note-topic"><h5>‘1/2’ 암기는 이 메뉴에 연결</h5><p><b>뉴욕: 라임 주스 1/2 oz / 그레나딘 1/2 tsp.</b></p><p class="note-aside">“시니까 대체로 1/2”라는 수업 암기 메모. 전체 시험의 99%로 외우지는 않기 — 다이키리·바카디 칵테일의 라임 주스는 3/4 oz처럼 예외가 있다.</p></section>
+    </div>
+    <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>레몬 손질·도구 사용·라벨 쇼잉·셰이킹 동작과 개인 평가는 사용자가 제공한 수업 메모입니다. 재료·용량·조주법·잔·가니시는 기존 2026년 표준 레시피를 유지합니다.</p><p><a href="https://www.q-net.or.kr/cst006.do?artlSeq=5250970&amp;brdId=Q006&amp;code=1204&amp;gId=&amp;gSite=Q&amp;id=cst00602" target="_blank" rel="noopener noreferrer">큐넷 2026년 조주기능사 실기 안내</a> · <a href="https://monin1912.com/en-uk/products/monin-lime-syrup-1" target="_blank" rel="noopener noreferrer">MONIN: 라임 시럽의 칵테일 활용</a></p></details>
+   </div></details>
+  </section>
+ </template>
+ <template id="whiskey-sour-note-template">
+  <section class="recipe-notes whiskey-sour-notes" aria-label="위스키 사워 수업 노트">
+   <p class="note-cue">Shake → Build · 소다 1 oz는 마지막 · 넣고 젓지 않기</p>
+   <p class="note-taste"><span>한줄평</span> 신 양주맛</p>
+   <details class="recipe-note-details"><summary>위스키 사워 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+    <header class="note-heading"><h4>위스키 사워 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+    <div class="note-basics"><p><b>먼저 Shake: 버번 + 레몬 주스 + 설탕 / 마지막 Build: 소다 워터 1 oz</b></p><p class="note-aside">탄산수는 셰이킹 X! On Top이므로 마지막에 계량해 얹고, 이 수업 순서에서는 젓지 않는다.</p></div>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>먼저, 레몬으로 체리 감싸기</h5><ol class="note-cutting"><li>레몬 슬라이스를 <b>얇게</b> 썬다. 체리를 감쌀 수 있는 두께로 준비한다.</li><li>가니시 픽으로 <b>레몬 한쪽 → 체리</b> 순서로 찌른다.</li><li>내려놓고 집게로 레몬의 남은 쪽을 잡아 체리 둘레로 말아 준다. 남은 끝을 같은 픽에 꽂아 고정한다.</li></ol><p class="note-aside">너무 두꺼우면 안 말림! ‘레몬 먼저 → 체리 → 내려놓기 → 집게로 레몬 감싸서 마저 꽂기’. 레몬이 체리를 감싸는 형태.</p></section>
+     <section class="note-topic"><h5>이 메뉴만 쓰는 두 가지</h5><p>기존 40종 표에서 <b>사워 잔(Sour Glass)</b>과 <b>레몬 슬라이스 + 체리</b> 조합은 위스키 사워에만 나온다.</p><p class="note-aside">사워 글라스 + 레몬으로 감싼 체리, 두 가지를 묶어서 기억! 샴페인 잔과 헷갈리지 말기.</p><p class="note-caption">잔 이름 비교: 위스키 사워는 사워 잔 · 그래스호퍼는 소서형 샴페인 잔 · 고창은 플루트 샴페인 잔.</p></section>
+    </div>
+    <section class="mn-flow mn-practice" aria-labelledby="ws-flow-title"><h5 id="ws-flow-title">실습 순서 · 탄산수 전까지 셰이킹</h5>
+     <ol>
+      <li><strong>사워 잔·셰이커에 얼음</strong><p>사워 잔에 칠링용 얼음을 넣어 옆에 둔다. 은색 셰이커 바디에는 혼합용 얼음을 넣는다.</p><p class="note-aside">잔부터 차갑게! 칠링의 공통 준비는 위 메모 참고. 이 메뉴는 설탕을 섞는 Shake부터 시작.</p></li>
+      <li><strong>버번 위스키 1 1/2 oz</strong><p>기주인 버번 위스키를 지거로 계량해 셰이커에 넣는다.</p><p class="note-aside">위스키 사워 → 기주는 위스키. 시험 레시피는 버번! 수업에서 본 병은 켄터키 젠틀맨(Kentucky Gentleman).</p></li>
+      <li><strong>레몬 주스 1/2 oz</strong><p>레몬 주스를 계량해 넣는다.</p><p class="note-aside">사워 → 레몬 → 시니까 이 메뉴는 1/2 oz로 기억. 뉴욕의 라임 주스와 구분!</p></li>
+      <li><strong>가루 설탕 1 tsp</strong><p>설탕 한 티스푼을 계량해 셰이커에 넣는다.</p><p class="note-aside">여기까지 버번 + 레몬 주스 + 설탕. 소다 워터는 아직 넣지 않기.</p></li>
+      <li><strong>닫고 셰이킹</strong><p>뚜껑과 바디를 단단히 잡고 흔들어 섞고 차갑게 만든다.</p><p class="note-aside">설탕을 섞으며 셰이크. 탄산수는 셰이커에 넣지 않고, 잔에 따른 뒤 따로!</p></li>
+      <li><strong>칠링 얼음 비우기 → 거르며 따르기</strong><p>사워 잔의 칠링 얼음과 녹은 물을 버린다. 셰이커의 얼음을 걸러 따르며, <b>소다 1 oz를 넣을 공간</b>을 남긴다.</p><p class="note-aside">수업 메모: ‘반 정도 차면 한 번 끊기’. 오래 지체하면 물이 많아지니 잔을 보며 따르기. ‘반’은 공간을 확인하는 감각 메모이며, 재료 계량을 절반으로 줄이라는 뜻은 아님.</p></li>
+      <li><strong>소다 워터 1 oz를 On Top → 젓지 않기</strong><p>탄산수를 <b>지거로 1 oz 계량</b>해 마지막에 잔 위로 가볍게 붓는다. 이 실습에서는 추가로 젓지 않는다.</p><p class="note-aside">그냥 가득 붓는 Fill이 아님! On Top with Soda Water 1 oz. ‘Build니까 마지막에 젓기’로 자동 연결하지 말고, 이번에는 얹고 끝.</p></li>
+      <li><strong>가니시를 잔 입구에 얹기</strong><p>미리 준비한 레몬 슬라이스 + 체리를 잔 입구에 올려 마무리한다.</p><p class="note-aside">얇은 레몬이 체리를 감싼 모양. 사워 잔과 이 장식을 한 세트로 기억.</p></li>
+     </ol>
+     <p class="mn-order-reminder">가니시 준비 → 얼음 → 버번 → 레몬 주스 → 설탕 → 셰이킹 → 칠링 얼음 비우기 → 거르기 → 소다 1 oz On Top · 젓지 않기 → 가니시</p>
+    </section>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>사워 · 식전주 연결 메모</h5><p class="note-aside">수업에서는 ‘사워 = 식전주’로 연결해 기억. Sour는 신맛을 떠올리는 말이며, 이름 자체가 식전주만 뜻하는 것은 아님.</p><p>이 메뉴의 암기 조합은 <b>버번 + 레몬의 신맛 + 설탕</b>. 마지막에 정량의 소다를 더한다.</p></section>
+     <section class="note-topic"><h5>머랭·흰자·탄산수 이야기</h5><p class="note-aside">‘레몬 주스 + 설탕 + 계란 흰자 → 머랭 재료를 떠올리기 → 시험에서는 흰자 대신 탄산수’라는 수업 연결 메모.</p><p>이번 시험 레시피는 <b>흰자 없이 소다 워터 1 oz</b>. IBA의 일반 위스키 사워에서는 흰자가 선택 재료이고 거품을 만드는 데 쓰인다. 흰자와 탄산수를 같은 역할의 대체재로 외우지는 않는다.</p></section>
+     <section class="note-topic"><h5>소다와 피즈를 연결할 때</h5><p class="note-aside">‘소다 워터가 들어가면 피즈’라는 수업 설명은 피즈 계열을 떠올리는 단서. 소다가 들어간 모든 칵테일의 이름이 피즈가 되는 것은 아님.</p><p>이번 제출 메뉴는 <b>위스키 사워</b>. 진 피즈도 소다를 제외하고 셰이킹한 뒤 소다를 더하지만, 재료·잔·정량은 각 메뉴대로 기억한다.</p></section>
+     <section class="note-topic"><h5>시험 기법 메모</h5><p class="note-aside">수업에서 들은 “시험에 기법은 1개씩만 나옴”은 출제 조합에 관한 메모. 공개문제에는 제시된 3개 작품을 만든다고 안내되어 있어, 기법별 한 번씩이라는 고정 규칙으로 단정하지 않고 당일 문제를 확인.</p><p>위스키 사워 자체의 표기부터 정확히: <b>Shake / Build</b>. 앞의 세 재료를 셰이크하고, 마지막 소다를 잔에 더한다.</p></section>
+    </div>
+    <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>가니시 조립·따르다 끊는 높이·젓지 않는 동작과 개인 평가는 사용자가 제공한 수업 메모입니다. 재료·용량·조주법·잔·가니시는 기존 2026년 표준 레시피를 유지합니다. IBA 자료는 일반 칵테일 설명용이며 시험 레시피를 바꾸는 기준으로 사용하지 않았습니다.</p><p><a href="https://www.q-net.or.kr/cst006.do?artlSeq=5250970&amp;brdId=Q006&amp;code=1204&amp;gId=&amp;gSite=Q&amp;id=cst00602" target="_blank" rel="noopener noreferrer">큐넷 2026년 실기 안내·표준 레시피</a> · <a href="https://iba-world.com/iba-cocktail/whiskey-sour/" target="_blank" rel="noopener noreferrer">IBA: 위스키 사워와 선택 재료인 흰자</a> · <a href="https://iba-world.com/iba-cocktail/gin-fizz/" target="_blank" rel="noopener noreferrer">IBA: 진 피즈의 소다 추가 순서</a></p></details>
+   </div></details>
+  </section>
+ </template>
+ <template id="boulevardier-note-template">
+  <section class="recipe-notes boulevardier-notes" aria-label="불바디에 수업 노트">
+   <p class="note-cue">1 : 1 : 1 · 각 1 oz · Stir 후 얼음과 함께 제공</p>
+   <p class="note-taste"><span>한줄평</span> 씀. 쓴 빵맛...</p>
+   <details class="recipe-note-details"><summary>불바디에 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+    <header class="note-heading"><h4>불바디에 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+    <div class="note-basics"><p><b>버번 위스키 1 oz + 스위트 베르무트 1 oz + 캄파리 1 oz = 1 : 1 : 1</b></p><p class="note-aside">얘만 버번 1 oz! 기존 40종 표에서 버번을 쓰는 나머지 네 메뉴는 모두 1 1/2 oz. 세 재료 똑같이 한 온스씩.</p></div>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>먼저, 오렌지 껍질 트위스트</h5><ol class="note-cutting"><li>오렌지의 <b>껍질</b>을 떠서 준비한다.</li><li>껍질을 돌돌 말아 트위스트 모양을 만든다.</li><li>완성 잔 입구에 얹을 수 있게 준비해 둔다.</li></ol><p class="note-aside">오렌지 과육 슬라이스가 아니라 껍질! 기존 40종 표에서 ‘오렌지 껍질 트위스트’는 이 메뉴에 한 번만 나온다.</p></section>
+     <section class="note-topic"><h5>Stir인데, 완성 잔에 얼음!</h5><p>믹싱 글라스에서 젓고 걸러, <b>얼음이 있는 올드 패션드 잔</b>에 담는다.</p><p class="note-aside">‘Stir인데 유일하게 얼음이 있다’는 완성 잔의 제공 얼음을 기억하는 메모. 젓는 데 쓰는 믹싱 얼음과 구분!</p><p class="note-caption">기존 40종 표에서 Stir + 올드 패션드 잔 조합은 불바디에뿐입니다.</p></section>
+    </div>
+    <section class="mn-flow mn-practice" aria-labelledby="bv-flow-title"><h5 id="bv-flow-title">실습 순서 · 각 1 oz 넣고 스터링</h5>
+     <ol>
+      <li><strong>올드 패션드 잔에 얼음</strong><p>제공할 잔을 골라 얼음을 채워 옆에 둔다. 완성 칵테일도 얼음과 함께 제공한다.</p><p class="note-aside">수업 메모: 얼음과 같이 서비스하니 별도 사전 칠링을 생략해도 됨. 시험 때는 헷갈리지 않게 일단 얼음을 채워 두기.</p></li>
+      <li><strong>믹싱 글라스·스트레이너 준비</strong><p>Stir에 쓸 믹싱 글라스와 스트레이너를 준비하고, 믹싱 글라스에 얼음을 채운다.</p><p class="note-aside">제공할 잔과 섞는 잔은 따로! 믹싱 글라스를 미리 칠링했다면 계량 전에 스트레이너로 얼음을 잡고 녹은 물만 비운다.</p></li>
+      <li><strong>버번 위스키 1 oz</strong><p>기주인 버번을 지거로 계량해 믹싱 글라스에 넣는다.</p><p class="note-aside">맨해튼·올드 패션드·뉴욕·위스키 사워는 버번 1 1/2 oz. 불바디에만 1 oz로 구분!</p></li>
+      <li><strong>스위트 베르무트 1 oz</strong><p>스위트 베르무트를 계량해 넣는다.</p><p class="note-aside">수업에서 본 마티니 빨간 뚜껑, Rosso로 기억. Extra Dry와 헷갈리지 않게 라벨 확인.</p></li>
+      <li><strong>캄파리 1 oz</strong><p>캄파리를 계량해 넣는다. 세 재료가 모두 같은 양이다.</p><p class="note-aside">캄파리 = 이탈리아의 빨간 비터 리큐르. 허브 향과 쓴맛으로 기억. 부재료인 베르무트·캄파리의 넣는 순서는 바뀌어도 된다는 수업 메모 — 각각 1 oz는 꼭!</p></li>
+      <li><strong>바스푼으로 스터링</strong><p>믹싱 글라스 안의 재료를 바스푼으로 저어 섞고 차갑게 만든다.</p><p class="note-aside">수저로 젓기 = Stir. 제공 잔에서 바로 만드는 Build와 구분하기.</p></li>
+      <li><strong>스트레이너로 거르기 → 코스터</strong><p>제공 잔의 녹은 물을 비우고 제공할 얼음을 준비한다. 믹싱 글라스에 스트레이너를 잘 잡고 칵테일을 걸러 따른 뒤, 잔을 코스터로 옮긴다.</p><p class="note-aside">믹싱 글라스의 얼음은 거르고, 완성 잔에는 서비스용 얼음이 남음. 따르기 → 코스터!</p></li>
+      <li><strong>오렌지 껍질을 잔 입구에 얹기</strong><p>미리 돌돌 말아 둔 오렌지 껍질 트위스트를 잔 입구에 얹는다.</p><p class="note-aside">마지막은 오렌지 껍질. 레몬 트위스트나 오렌지 슬라이스와 헷갈리지 않기.</p></li>
+     </ol>
+     <p class="mn-order-reminder">오렌지 껍질 준비 → 잔·믹싱 글라스에 얼음 → 버번 1 → 스위트 베르무트 1 → 캄파리 1 → Stir → 얼음 있는 잔에 거르기 → 코스터 → 오렌지 트위스트</p>
+    </section>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>불바디에, 이름 기억하기</h5><p class="note-aside">수업 암기 표현: ‘건달, 대로에 있는 사람’. Boulevard(대로)와 연결해서 이름을 떠올리기.</p><p>Boulevardier는 파리의 대로를 즐겨 다니는 사람에서 나온 말로, <b>도시의 멋쟁이·사교적인 사람</b>에 가까운 뜻이다. ‘건달’은 수업의 연상 표현으로 기억한다.</p></section>
+     <section class="note-topic"><h5>세 병을 한 줄로</h5><p><b>기주:</b> 버번 위스키<br><b>부재료:</b> 스위트 베르무트 + 캄파리<br><b>용량:</b> 셋 다 1 oz</p><p class="note-aside">마티니 Rosso = 스위트 베르무트. 캄파리 = 이탈리아, 빨강, 허브, 쓴맛. 색과 병 이름까지 묶어 떠올리기.</p></section>
+    </div>
+    <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>실습 동작·이름의 연상 표현·개인 평가는 사용자가 제공한 메모입니다. 재료·용량·기법·잔·가니시는 기존 2026년 표준 레시피를 유지합니다. ‘유일함’과 버번 용량 비교는 이 연습장의 40종 표 범위입니다.</p><p><a href="https://www.q-net.or.kr/cst006.do?artlSeq=5250970&amp;brdId=Q006&amp;code=1204&amp;gId=&amp;gSite=Q&amp;id=cst00602" target="_blank" rel="noopener noreferrer">큐넷 2026년 실기 안내·표준 레시피</a> · <a href="https://www.campari.com/en-gb/our-products/campari/" target="_blank" rel="noopener noreferrer">Campari 공식 제품 설명</a> · <a href="https://www.merriam-webster.com/dictionary/boulevardier" target="_blank" rel="noopener noreferrer">Merriam-Webster: Boulevardier 뜻</a></p></details>
+   </div></details>
+  </section>
+ </template>
+ <template id="rusty-nail-note-template">
+  <section class="recipe-notes rusty-nail-notes" aria-label="러스티 네일 수업 노트">
+   <p class="note-cue">스카치 1 oz + 드람뷔 1/2 oz · Build · 가니시 없음</p>
+   <p class="note-taste"><span>한줄평</span> 꿀맛 안나는데? 쩝... 아쉽</p>
+   <details class="recipe-note-details"><summary>러스티 네일 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+    <header class="note-heading"><h4>러스티 네일 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+    <div class="note-basics"><p><b>Scotch Whisky 1 oz + Drambuie 1/2 oz</b> · 올드 패션드 잔 · Build</p><p class="note-aside">쉽다! 두 재료만. 기존 40종 시험 표에서 스카치 위스키를 기주로 쓰는 메뉴는 러스티 네일뿐.</p></div>
+    <section class="mn-flow mn-practice" aria-labelledby="rn-flow-title"><h5 id="rn-flow-title">실습 순서 · 잔에 바로 넣고 젓기</h5><ol>
+     <li><strong>얼음이 든 올드 패션드 잔 준비</strong><p>제공할 잔과 얼음을 준비한다. 믹싱 글라스에서 따로 섞지 않고 이 잔에서 만든다.</p><p class="note-aside">Build니까 잔에 직접! 가니시도 없음.</p></li>
+     <li><strong>스카치 위스키 1 oz</strong><p>기주를 계량해 잔에 넣는다.</p><p class="note-aside">수업에서 본 병은 Sir Edward’s(서 에드워즈). 다른 위스키 메뉴의 버번과 헷갈리지 말기.</p></li>
+     <li><strong>드람뷔 1/2 oz</strong><p>드람뷔 리큐르를 계량해 넣는다. 사용 후 병 입구에 묻은 액을 깨끗이 닦는다.</p><p class="note-aside">수업에서 ‘드람부이’라고 부른 그 병! 코르크는 돌리면서 위로 당겨 열기. 꿀이 들어가 끈적이니 한 번 닦아 정리.</p></li>
+     <li><strong>바스푼으로 젓기 → 코스터</strong><p>잔 안의 재료를 가볍게 저어 섞는다. 가니시 없이 코스터에 올려 마무리한다.</p><p class="note-aside">Sir Edward’s → 드람뷔 → 닦기 → Build니까 수저로 젓기.</p></li>
+    </ol><p class="mn-order-reminder">얼음 든 잔 → 스카치 1 oz → 드람뷔 1/2 oz → 가볍게 젓기 → 가니시 없이 코스터</p></section>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>앤틱한 느낌으로 기억</h5><p class="note-aside">수업 이미지: ‘녹슨 못보다는 고풍스러운, 앤틱한 느낌’. 이름을 떠올리는 연상 메모로 기억하기.</p><p>Rusty Nail의 직역은 ‘녹슨 못’. 고풍스러운 이미지는 이 이름에 붙여 둔 수업의 느낌이다.</p></section>
+     <section class="note-topic"><h5>드람뷔는 꿀이 들어간 리큐르</h5><p>스카치 위스키에 헤더 꿀, 허브와 향신료를 더한 리큐르다.</p><p class="note-aside">꿀 자체를 따로 넣는 레시피는 아님. 꿀맛이 기대보다 덜 느껴졌다는 개인 메모 — 재료 설명과 내 입맛은 따로 기억!</p></section>
+    </div>
+    <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>병 이름·코르크 여는 동작·닦기·이름의 연상과 한줄평은 사용자 수업 메모입니다. 스카치가 유일하다는 비교는 기존 40종 표 범위입니다. 시험 레시피는 원래 재료·용량·Build·잔·가니시를 유지합니다.</p><p><a href="https://drambuie.com/en/" target="_blank" rel="noopener noreferrer">Drambuie 공식 재료 설명</a> · <a href="https://www.q-net.or.kr/cst006.do?artlSeq=5250970&amp;brdId=Q006&amp;code=1204&amp;gId=&amp;gSite=Q&amp;id=cst00602" target="_blank" rel="noopener noreferrer">큐넷 2026년 실기 안내·표준 레시피</a></p></details>
+   </div></details>
+  </section>
+ </template>
+ <template id="sidecar-note-template">
+  <section class="recipe-notes sidecar-notes" aria-label="사이드카 수업 노트">
+   <p class="note-cue">브랜디 1 oz · 트리플 섹 1 oz · 레몬은 1/4 oz · 소프트 셰이킹</p>
+   <details class="recipe-note-details"><summary>사이드카 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+    <header class="note-heading"><h4>사이드카 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+    <div class="note-basics"><p><b>브랜디 1 oz + 트리플 섹 1 oz + 레몬 주스 1/4 oz</b> · Shake · 칵테일 잔 · 가니시 없음</p><p class="note-aside">레몬 주스인데 왜 1/2가 아니지? 사이드카는 1/4 oz! ‘거의 다 반’보다 이 메뉴의 예외를 정확히.</p></div>
+    <section class="mn-flow mn-practice" aria-labelledby="sc-flow-title"><h5 id="sc-flow-title">실습 순서 · 가볍게 물결을 만들며</h5><ol>
+     <li><strong>칵테일 잔·셰이커에 얼음</strong><p>칵테일 잔에 칠링용 얼음을 넣어 두고, 셰이커 바디에는 혼합용 얼음을 넣는다.</p><p class="note-aside">제공 잔과 섞는 잔, 두 군데 얼음부터.</p></li>
+     <li><strong>브랜디 1 oz</strong><p>기주 브랜디를 계량해 셰이커에 넣는다.</p><p class="note-aside">수업에서 ‘나폴레옹 브랜디’로 기억한 병. 실제 병 라벨에서 브랜디인지 확인.</p></li>
+     <li><strong>트리플 섹 1 oz</strong><p>트리플 섹을 계량해 넣는다.</p><p class="note-aside">수업 병: 디카이퍼(De Kuyper). ‘바 필수 리큐르’로 기억한 오렌지 리큐르.</p></li>
+     <li><strong>레몬 주스 1/4 oz</strong><p>레몬 주스를 1/4 oz 계량해 넣는다.</p><p class="note-aside">1/2 oz로 자동 계량하지 않기. 사이드카의 레몬은 1/4!</p></li>
+     <li><strong>닫고 소프트 셰이킹</strong><p>셰이커를 단단히 잡고 물결을 만들듯 부드럽게 흔들어 섞고 차갑게 한다.</p><p class="note-aside">가루 설탕이 없어 수업에서는 칠링을 중심으로 소프트 셰이킹. 셰이킹은 혼합과 희석도 함께 일어나는 동작.</p></li>
+     <li><strong>칠링 얼음 비우기 → 거르며 따르기</strong><p>칵테일 잔의 얼음과 물을 비우고, 스트레이너를 잘 잡아 혼합용 얼음을 걸러 따른다.</p><p class="note-aside">잔 비우기 → 스트레이너 잡기 → 따르기.</p></li>
+     <li><strong>가니시 없이 코스터</strong><p>장식 없이 완성 잔을 코스터에 올려 마무리한다.</p><p class="note-aside">수업에서는 식전주로 연결해 기억.</p></li>
+    </ol><p class="mn-order-reminder">얼음 준비 → 브랜디 1 → 트리플 섹 1 → 레몬 1/4 → 소프트 셰이킹 → 잔 비우기 → 거르기 → 코스터</p></section>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>Triple Sec · 브랜디 연결</h5><p><b>sec = dry</b>로 기억한다. 트리플 섹은 오렌지 리큐르이며, 이름의 dry를 설탕이 전혀 없다는 뜻으로 외우지는 않는다.</p><p class="note-aside">오늘 외우는 브랜디 계열 3종은 모두 칵테일 잔 + Shake. 모든 브랜디 칵테일의 규칙은 아니며 40종에는 Float인 푸스 카페도 있다.</p></section>
+     <section class="note-topic"><h5>레몬과 업장 메모</h5><p class="note-aside">‘노란색이라 레몬’은 이번 수업의 연상 단서. 실제 재료는 색으로 판단하지 않고 레몬 주스 표기로 확인하기.</p><p class="note-aside">업장 취향 메모: 브랜디 자리에 코냑 + 생레몬즙을 쓰면 맛있다고 배움. 코냑도 브랜디의 한 종류. 시험에서는 지급 재료와 위 표의 용량으로 연습.</p></section>
+    </div>
+    <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>브랜드·식전주·소프트 셰이킹·맛 제안은 수업 메모입니다. 시험의 기본 조주법은 Shake이며 재료·용량·잔·가니시는 기존 표를 유지합니다.</p><p><a href="https://www.cointreau.com/us/en/products/cointreau" target="_blank" rel="noopener noreferrer">Cointreau: 트리플 섹·오렌지 리큐르</a></p></details>
+   </div></details>
+  </section>
+ </template>
+ <template id="brandy-alexander-note-template">
+  <section class="recipe-notes brandy-alexander-notes" aria-label="브랜디 알렉산더 수업 노트">
+   <p class="note-cue">1 : 1 : 1 · 모두 3/4 oz · 하드 셰이킹 · 넛메그 살짝</p>
+   <p class="note-taste"><span>한줄평</span> 나쁘지 않음. 머드 쉐이크맛...</p>
+   <details class="recipe-note-details"><summary>브랜디 알렉산더 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+    <header class="note-heading"><h4>브랜디 알렉산더 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+    <div class="note-basics"><p><b>브랜디 · 크렘 드 카카오 브라운 · 라이트 밀크 = 각 3/4 oz</b></p><p class="note-aside">비율은 1 : 1 : 1. 불바디에처럼 각 1 oz가 아니라, 세 재료 모두 3/4 oz!</p></div>
+    <section class="mn-flow mn-practice" aria-labelledby="ba-flow-title"><h5 id="ba-flow-title">실습 순서 · 유제품은 충분히 섞기</h5><ol>
+     <li><strong>칵테일 잔·셰이커에 얼음</strong><p>칵테일 잔을 칠링하고, 셰이커 바디에 혼합용 얼음을 넣는다.</p></li>
+     <li><strong>브랜디 3/4 oz</strong><p>기주 브랜디를 계량해 넣는다.</p><p class="note-aside">수업에서 ‘나폴레옹’으로 기억한 브랜디 병.</p></li>
+     <li><strong>크렘 드 카카오 브라운 3/4 oz</strong><p>브라운 카카오 리큐르를 계량해 넣는다.</p><p class="note-aside">B = Brown. 디카이퍼 검정 병으로 기억. 달콤한 초콜릿 리큐르라 디저트 칵테일로 연결! White와 구분.</p></li>
+     <li><strong>라이트 밀크 3/4 oz</strong><p>우유를 계량해 넣는다. 기존 시험 표의 표기는 Light Milk다.</p><p class="note-aside">이것까지 3/4 oz. 셋 다 같은 양.</p></li>
+     <li><strong>닫고 하드 셰이킹</strong><p>셰이커를 확실히 잡고 강하게 흔들어 유제품과 나머지 재료를 고르게 섞는다.</p><p class="note-aside">수업 메모: 유제품은 하드 셰이킹이 부족하면 거품 상태에서 티가 남. 거품과 질감을 함께 보며 연습.</p></li>
+     <li><strong>잔 비우기 → 작은 스트레이너로 거르기</strong><p>칵테일 잔의 칠링 얼음과 물을 비운다. 작은 스트레이너를 잔 위에 대고 셰이커의 내용물을 걸러 따른다.</p><p class="note-aside">수업 동작: 작은 거름망을 들고, 그 위로 셰이커를 털털 따라내기.</p></li>
+     <li><strong>넛메그 가루 살짝 → 코스터</strong><p>넛메그 파우더를 소량 뿌리고 코스터에 올린다.</p><p class="note-aside">씹힐 만큼 많이 X. 수업의 1 pinch = 한 꼬집. 공식 표의 가니시는 넛메그 가루이며 꼬집 수를 정량으로 새로 정한 것은 아님.</p></li>
+    </ol><p class="mn-order-reminder">얼음 준비 → 브랜디 3/4 → 브라운 카카오 3/4 → 밀크 3/4 → 하드 셰이킹 → 잔 비우기 → 거르기 → 넛메그 살짝</p></section>
+    <div class="note-topic-grid">
+     <section class="note-topic"><h5>넛메그 = 육두구 씨를 간 향신료</h5><p>기존 40종 표에서 <b>넛메그 가루 장식</b>은 브랜디 알렉산더에만 나온다.</p><p class="note-aside">유제품 특유의 향을 잡아 준다고 배운 메모. 향은 호불호가 있음. 나는 향긋한가? 소량으로 마무리하기.</p></section>
+     <section class="note-topic"><h5>소프트와 하드 비교</h5><p><b>수업 기준:</b> 사이드카·허니문은 소프트 / 브랜디 알렉산더는 하드 셰이킹.</p><p class="note-aside">공식 표의 기법은 셋 다 Shake. 손에 잡는 강도와 동작을 구분하는 수업 표현으로 외우기.</p></section>
+    </div>
+    <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>브랜드·셰이킹 강도·거름망 동작·한 꼬집·개인 평가는 사용자 메모입니다. 세 재료의 용량과 시험 가니시는 기존 레시피 그대로입니다.</p><p><a href="https://www.dekuyperusa.com/flavor/dekuyper-creme-de-cacao-dark" target="_blank" rel="noopener noreferrer">DeKuyper: 카카오 다크 리큐르</a> · <a href="https://www.mccormick.com.au/products/herbs-spices/herbs-and-spices/mccormick-nutmeg-ground" target="_blank" rel="noopener noreferrer">McCormick: 넛메그 설명</a></p></details>
+   </div></details>
+  </section>
+ </template>
+ <template id="honeymoon-note-template">
+  <section class="recipe-notes honeymoon-notes" aria-label="허니문 수업 노트">
+   <p class="note-cue">애플 브랜디·베네딕틴 각 3/4 · 트리플 섹 1/4 · 레몬 1/2 oz</p>
+   <p class="note-taste"><span>한줄평</span> 시큼. 낫뱃.</p>
+   <details class="recipe-note-details"><summary>허니문 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+    <header class="note-heading"><h4>허니문 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+    <div class="note-basics"><p><b>애플 브랜디 3/4 + 베네딕틴 DOM 3/4 + 트리플 섹 1/4 + 레몬 주스 1/2 oz</b></p><p class="note-aside">이름은 허니문이지만 꿀은 따로 넣지 않는다. 기주는 일반 브랜디가 아니라 애플 브랜디!</p></div>
+    <section class="mn-flow mn-practice" aria-labelledby="hm-flow-title"><h5 id="hm-flow-title">실습 순서 · 긴 병과 코르크 조심</h5><ol>
+     <li><strong>칵테일 잔·셰이커에 얼음</strong><p>칵테일 잔에 칠링용 얼음, 셰이커 바디에 혼합용 얼음을 준비한다.</p><p class="note-aside">병이 길어 몸통이 잘 안 잡히면 병목을 안정적으로 잡고 필요하면 바닥을 받치기. 입구에 손이 닿지 않도록.</p></li>
+     <li><strong>애플 브랜디 3/4 oz</strong><p>코르크를 조심히 열고 애플 브랜디를 계량해 넣는다.</p><p class="note-aside">‘Château du …’로 기억한 칼바도스 병. 정확한 제품명은 아직 미확인. 칼바도스는 사과 브랜디 계열로 연결하기.</p></li>
+     <li><strong>베네딕틴 DOM 3/4 oz</strong><p>베네딕틴 DOM을 계량해 넣는다.</p><p class="note-aside">수업에서 ‘베네딕팅 DOM’으로 들은 병. 애플 브랜디와 같은 3/4 oz. 도수가 높은 칵테일이라고 들은 메모.</p></li>
+     <li><strong>트리플 섹 1/4 oz</strong><p>트리플 섹을 1/4 oz 계량해 넣는다.</p><p class="note-aside">사이드카의 트리플 섹 1 oz와 구분!</p></li>
+     <li><strong>레몬 주스 1/2 oz</strong><p>레몬 주스를 계량해 넣는다.</p><p class="note-aside">허니문의 레몬은 1/2 oz. 사이드카의 1/4 oz와 비교해서 기억.</p></li>
+     <li><strong>닫고 소프트 셰이킹</strong><p>셰이커를 단단히 잡고 부드럽게 흔들어 섞고 차갑게 한다.</p><p class="note-aside">수업에서 배운 강도는 소프트. 브랜디 알렉산더의 하드와 비교!</p></li>
+     <li><strong>칠링 얼음 비우기 → 거르며 따르기</strong><p>칵테일 잔의 얼음과 물을 비우고 혼합용 얼음을 걸러 따른다.</p></li>
+     <li><strong>가니시 없이 코스터</strong><p>장식 없이 완성 잔을 코스터에 올려 마무리한다.</p></li>
+    </ol><p class="mn-order-reminder">얼음 → 애플 브랜디 3/4 → 베네딕틴 3/4 → 트리플 섹 1/4 → 레몬 1/2 → 소프트 셰이킹 → 잔 비우기 → 거르기</p></section>
+    <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>병 잡기·브랜드 기억·도수 느낌·셰이킹 강도·한줄평은 사용자 수업 메모입니다. 정확하지 않은 병 이름은 임의로 확정하지 않았고 시험 재료·용량·잔·가니시는 기존 표를 유지합니다.</p><p><a href="https://www.drinkcalvados.us/what-is-it" target="_blank" rel="noopener noreferrer">Calvados 공식 안내</a></p></details>
+   </div></details>
+  </section>
+ </template>
+
+ <template id="memory-common-guide-template">
+  <details class="memory-study-guide"><summary>공통 암기표 · 잔·용량·라임/레몬 · 하이볼 만드는 순서</summary><div class="memory-study-guide-body">
+   <p>빠르게 떠올리는 수업 연상법입니다. 실제 재료·용량은 각 메뉴의 표를 먼저 확인하세요.</p>
+   <table><thead><tr><th>수업에서 묶어 외우기</th><th>함께 기억할 예외·범위</th></tr></thead><tbody>
+    <tr><td>위스키는 레몬/라임</td><td>뉴욕은 라임, 위스키 사워는 레몬. 맨해튼·러스티 네일에는 둘 다 주스로 넣지 않음.</td></tr>
+    <tr><td>브랜디는 레몬</td><td>사이드카·허니문에 적용. 브랜디 알렉산더는 카카오·밀크이며 레몬 없음.</td></tr>
+    <tr><td>보드카·럼은 라임</td><td>모스코 뮬·코스모·애플 마티니·마이 타이·쿠바·다이키리·바카디에 연결. 블랙 러시안·시브리즈·피나 콜라다·블루 하와이안에는 라임 없음.</td></tr>
+    <tr><td>투명한 술→라임 / 노란 술→레몬 (진 제외)</td><td>색으로 떠올리는 보조 암기법. 재료를 선택하거나 대체하는 규칙으로 사용하지 않음.</td></tr>
+    <tr><td>롱 드링크 기주 1 1/2 oz</td><td>이번 모스코 뮬·시브리즈·쿠바 리브레에 적용. 필스너 Blend 럼 메뉴들은 1 또는 1 1/4 oz로 다름.</td></tr>
+    <tr><td>보드카 숏은 1 oz</td><td>코스모·애플 마티니는 칵테일 잔, 블랙 러시안은 올드 패션드 잔. 잔은 메뉴별 확인.</td></tr>
+    <tr><td>파인애플 주스↔파인애플 가니시</td><td>이번 버진 펀치·피나 콜라다·블루 하와이안·마이 타이에 연결. 마이 타이는 오렌지 웨지도 표에서 허용.</td></tr>
+   </tbody></table>
+   <h3>집에서 하이볼, 무엇부터 넣을까?</h3>
+   <p><b>차가운 잔 → 넉넉한 얼음 → 기주 → 먼저 차갑게 섞기 → 차가운 탄산 → 최소한으로 섞기</b>가 익히기 좋은 흐름입니다. 기주를 먼저 넣었다면 얼음을 준비한 다음 탄산을 넣으세요. 탄산을 붓고 큰 얼음을 나중에 떨어뜨리면 거품·넘침과 탄산 손실을 조절하기 어렵습니다.</p>
+   <p class="note-aside">탄산은 마지막! 맛이 없는 원인을 순서 하나로만 단정하지 말고 잔·재료의 온도, 얼음 양, 기주와 탄산의 비율, 과한 젓기를 함께 확인. 시험의 Fill은 임의의 oz가 아니라 채우기 지시. 약 80%는 이번 수업의 여유 공간 메모로 구분.</p>
+   <div class="note-topic-grid"><section class="note-topic"><h3>도구와 병</h3><p>지거는 손목을 비틀지 않고 수평을 유지하며 잔 가까이에서 계량합니다. 무거운 주스 병은 안정적으로 받칩니다.</p><p class="note-aside">지거링할 때 손 가로로! 병 뚜껑을 미리 전부 열어 두는 것은 권장하지 않음. 큰 지거가 반드시 1 1/2 oz인 것은 아니므로 표시 확인. 짐빔=버번, ‘나폴레옹’은 수업에서 본 브랜디 병.</p></section><section class="note-topic"><h3>칠링·블렌딩·탄산</h3><p>제공 잔을 먼저 칠링합니다. 블렌더에 들어가는 얼음은 혼합·분쇄용입니다. 기기의 얼음 분쇄 가능 여부는 설명서로 확인합니다.</p><p class="note-aside">블렌더 통에만 얼음 넣었다고 제출 잔까지 칠링된 것은 아님. Blend 메뉴는 잔을 비운 뒤 갈린 내용물을 담기. 탄산은 셰이크·블렌딩하지 않기.</p></section></div>
+   <h3>럼 6종 · 숫자를 한 줄로</h3><table><thead><tr><th>메뉴</th><th>기주</th><th>라임 주스</th></tr></thead><tbody>
+    <tr><td>피나 콜라다</td><td>1 1/4 oz</td><td>없음</td></tr><tr><td>블루 하와이안</td><td>1 oz</td><td>없음</td></tr><tr><td>마이 타이</td><td>1 1/4 oz</td><td>1 oz</td></tr><tr><td>쿠바 리브레</td><td>1 1/2 oz</td><td>1/2 oz</td></tr><tr><td>다이키리</td><td>1 3/4 oz</td><td>3/4 oz</td></tr><tr><td>바카디 칵테일</td><td>지정 바카디 화이트 1 3/4 oz</td><td>3/4 oz</td></tr>
+   </tbody></table><p class="note-aside">‘블루 1 · 큐바 1/2 · 다이키리 3/4’는 1 뒤에 분수가 붙는 연상. 실제 기주는 1 → 1 1/2 → 1 3/4 oz. 피나·마이는 1 1/4 oz로 한 쌍. 다이키리와 바카디는 설탕/그레나딘을 구분.</p>
+   <h3>슬라이스·웨지·껍질</h3><p><b>모스코 뮬 = 슬라이스 / 시브리즈 = 웨지 / 쿠바 리브레 = 레몬 웨지 / 코스모폴리탄 = 껍질 트위스트.</b> 라임·레몬 둘 중 하나가 허용되는 메뉴도 실제 표를 확인합니다.</p>
+   <p class="note-aside">‘콜라면 웨지 + 시브리즈’는 이번 비교 메모. 이름과 모양을 함께 외우기. 칵테일 글라스를 쓰는 메뉴에는 칠링 얼음과 물을 비우고 따른다.</p>
+   <h3>출제 빈도와 연습 목표</h3><p>‘레몬 스쿼시 적게 / 버진 펀치 자주 / Build 3종 2분 / 서울에서는 Blend 또는 Float가 반드시 하나’는 수업 메모입니다. 공식 공개문제는 지정 3작품을 7분 안에 제출하도록 안내하며, 이 빈도·50% 확률을 보장하지 않습니다.</p>
+   <details class="mn-sources"><summary>자료 기준 · 2026-11-07 확인</summary><p><a href="https://www.q-net.or.kr/cst006.do?artlSeq=5250970&brdId=Q006&code=1204&gId=&gSite=Q&id=cst00602" target="_blank" rel="noopener noreferrer">큐넷 2026년 표준 레시피·공개문제</a> · <a href="https://www.suntory.co.jp/whisky/beginner/drink/highball.html" target="_blank" rel="noopener noreferrer">Suntory: 얼음 → 위스키 → 탄산 순서</a></p><p>레시피의 사실은 기존 40종 자료에서 가져왔습니다. 실습 순서는 수업과 학습용 예시이며 공식 세부 채점표가 아닙니다. 개인 맛·브랜드 기억·출제 체감은 부가 필기로 남깁니다.</p></details>
+  </div></details>
+ </template>
+
+ <template id="lemon-squash-note-template"><section class="recipe-notes lemon-squash-notes" aria-label="프레시 레몬 스쿼시 수업 노트">
+  <p class="note-cue">생레몬 반 개 · 설탕 2 tsp · 소다 Fill · Build</p><p class="note-taste"><span>한줄평</span> 시-------------------------------큼. 노맛</p>
+  <details class="recipe-note-details"><summary>프레시 레몬 스쿼시 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>프레시 레몬 스쿼시 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>생레몬 착즙 1/2 ea · 가루 설탕 2 tsp · 소다 워터 Fill</b></p><p>Build · 하이볼 잔 · 레몬 슬라이스</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>레몬과 잔 준비</strong><p>하이볼 잔을 칠링하고, 레몬 슬라이스 가니시를 먼저 준비한다.</p><p class="note-aside">즙을 짤 레몬은 둥근 단면이 나오도록 가로로 반 자르기. 도마에서 안정적으로 잡고 절단면 중앙에 얕은 + 칼집을 내어 짜는 수업 동작.</p></li><li><strong>생레몬 1/2개 착즙</strong><p>생레몬 반 개의 즙을 준비해 잔에 넣는다. 씨는 걸러 낸다.</p><p class="note-aside">1/2 ea = 반 개. 1/2 oz 레몬 주스와 다름!</p></li><li><strong>가루 설탕 2 tsp</strong><p>설탕을 깎아서 두 티스푼 넣고 레몬즙과 섞어 녹인다.</p><p class="note-aside">기존 40종 표에서 가루 설탕 2 tsp는 이 메뉴만.</p></li><li><strong>얼음과 소다 워터</strong><p>서비스용 얼음을 넣고 차가운 소다 워터로 Fill 한다.</p><p class="note-aside">수업의 약 80%는 흘리지 않을 여유를 두는 기준으로 메모. Fill 자체가 공식적으로 80%를 뜻하는 것은 아님.</p></li><li><strong>가볍게 섞고 장식</strong><p>탄산을 과하게 날리지 않도록 부드럽게 섞고 코스터로 옮긴다. 레몬 슬라이스에 칼집을 내어 잔 입구에 꽂는다.</p><p class="note-aside">Build = 제공 잔에서 완성. 과육을 깊이 잘라 쪼개기보다 걸릴 만큼 칼집.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>스쿼시와 에이드</h5><p>이 시험 레시피는 레몬·설탕·탄산수로 만드는 논알코올 음료다.</p><p class="note-aside">수업에서는 에이드와 연결. 영어 squash는 농축 과즙 음료를 뜻하기도 하며 탄산 필수가 아님. -ade도 모든 나라에서 단순히 주스를 뜻하지는 않음.</p></section><section class="note-topic"><h5>출제 메모</h5><p>출제 빈도가 낮다고 들은 수업 메모.</p><p class="note-aside">공식 출제 확률이 아니라 개인 학습 우선순위로만 사용.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://dictionary.cambridge.org/dictionary/english/squash" target="_blank" rel="noopener noreferrer">squash 뜻</a> · <a href="https://www.merriam-webster.com/dictionary/ade" target="_blank" rel="noopener noreferrer">-ade 뜻</a></p></details>
+  </div></details>
+ </section></template>
+
+ <template id="virgin-punch-note-template"><section class="recipe-notes virgin-punch-notes" aria-label="버진 프루트 펀치 수업 노트">
+  <p class="note-cue">과즙 5종 + 그레나딘 · 1 oz 네 개 / 1/2 oz 두 개 · Blend</p><p class="note-taste"><span>한줄평</span> 시큼한 조금 단 시원한 주스. 굳</p>
+  <details class="recipe-note-details"><summary>버진 프루트 펀치 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>버진 프루트 펀치 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>오렌지 주스 1 oz · 파인애플 주스 1 oz · 크랜베리 주스 1 oz · 자몽 주스 1 oz · 레몬 주스 1/2 oz · 그레나딘 시럽 1/2 oz</b></p><p>Blend · 필스너 잔 (받침형) · 생파인애플 웨지 + 체리</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>잔과 가니시 준비</strong><p>필스너 잔을 먼저 칠링하고 파인애플 웨지와 체리를 준비한다.</p><p class="note-aside">블렌더 통에 얼음을 넣는 것과 제출 잔을 차갑게 만드는 것은 별개.</p></li><li><strong>네 과즙 각 1 oz</strong><p>오렌지·파인애플·크랜베리·자몽 주스를 각각 1 oz 계량해 블렌더에 넣는다.</p><p class="note-aside">과즙끼리는 같은 단계라 계량 순서를 바꿔도 됨.</p></li><li><strong>레몬과 그레나딘 각 1/2 oz</strong><p>레몬 주스 1/2 oz와 그레나딘 시럽 1/2 oz를 넣는다.</p><p class="note-aside">레몬은 신맛, 그레나딘은 색과 단맛. 과즙 5종에 시럽 하나가 더해진 총 6재료.</p></li><li><strong>얼음 넣고 블렌딩</strong><p>혼합용 얼음을 넣고 뚜껑을 닫아 블렌딩한다.</p><p class="note-aside">정확한 얼음 개수나 블렌딩 초수는 이 공식 레시피 표에 별도 지정되어 있지 않음.</p></li><li><strong>따르기와 장식</strong><p>필스너 잔의 칠링 얼음·물을 비우고 블렌딩한 내용물을 담는다. 코스터로 옮기고 파인애플·체리로 장식한다.</p><p class="note-aside">셰이크처럼 혼합용 얼음을 모두 거르는 메뉴가 아님.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>다섯 과즙 연상</h5><p>라임·레몬·파인애플·오렌지·크랜베리·자몽 중 라임을 제외한 다섯 과즙.</p><p class="note-aside">‘라임은 레몬과 겹치니 제외’는 이 메뉴 암기법. 라임과 레몬이 같은 재료라서 서로 대체한다는 뜻은 아님.</p></section><section class="note-topic"><h5>Punch의 다섯</h5><p>Punch는 힌디어·우르두어의 ‘다섯’과 연결되는 어원설이 있다.</p><p class="note-aside">아랍어 5로 외우지 않기. 어원의 다섯 재료와 이 시험 펀치의 과즙 다섯 개는 구분.</p></section><section class="note-topic"><h5>같이 외울 묶음</h5><p>피나 콜라다·블루 하와이안·마이 타이와 Blend + 필스너 잔으로 묶는다.</p><p class="note-aside">출제가 잦다고 들은 수업 메모. 공식 빈도를 보장하는 말은 아님.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://www.merriam-webster.com/dictionary/punch" target="_blank" rel="noopener noreferrer">Punch 어원</a></p></details>
+  </div></details>
+ </section></template>
+
+ <template id="black-russian-note-template"><section class="recipe-notes black-russian-notes" aria-label="블랙 러시안 수업 노트">
+  <p class="note-cue">보드카 1 oz + 커피 리큐르 1/2 oz · Build · 장식 없음</p>
+  <details class="recipe-note-details"><summary>블랙 러시안 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>블랙 러시안 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>보드카 1 oz · 커피 리큐르 1/2 oz</b></p><p>Build · 올드 패션드 잔 · 없음</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>올드 패션드 잔에 얼음</strong><p>차가운 올드 패션드 잔에 서비스용 얼음을 준비한다.</p><p class="note-aside">러스티 네일처럼 두 재료, Build, 같은 잔, 가니시 없음으로 연결.</p></li><li><strong>보드카 1 oz</strong><p>보드카를 계량해 잔에 넣는다.</p><p class="note-aside">러시안 → 러시아 → 보드카로 연상. 모스코 뮬의 1 1/2 oz와 다름.</p></li><li><strong>커피 리큐르 1/2 oz</strong><p>커피 리큐르를 계량해 넣는다.</p><p class="note-aside">Kahlúa = 깔루아/칼루아. 까만 커피 리큐르.</p></li><li><strong>잔에서 젓고 코스터</strong><p>바스푼으로 가볍게 섞어 코스터로 옮긴다. 가니시는 없다.</p><p class="note-aside">러스티 네일은 스카치+드람뷔, 블랙 러시안은 보드카+커피.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>우유·크림을 넣으면?</h5><p>블랙 러시안에 크림을 더한 것이 화이트 러시안. 깔루아와 우유만 섞는 깔루아 밀크에는 보드카가 따로 들어가지 않는다.</p><p class="note-aside">‘맥심 모카골드 주세요’ 같은 느낌이라 바에서 굳이… 두 메뉴는 가성비가 아쉽다는 개인 메모.</p></section><section class="note-topic"><h5>커피 리큐르 취향</h5><p>수업에서 대안으로 들은 제품은 Tia Maria와 Mr Black.</p><p class="note-aside">Mr Black은 미국이 아니라 호주에서 시작한 콜드브루 커피 리큐르. 더치커피 향으로 기억. 해외 사용 빈도는 별도 통계 확인 없음.</p></section><section class="note-topic"><h5>이름 이야기</h5><p>KGB에 저항하는 어두운 면이라는 이야기는 확인되지 않은 수업 연상으로 남긴다.</p><p class="note-aside">브랜드가 소개하는 기원은 브뤼셀과 보드카의 러시아 연상. 역사적 사실과 이름을 외우는 이야기를 구분.</p></section><section class="note-topic"><h5>속도 연습</h5><p>블랙 러시안·모스코 뮬·시브리즈는 간단한 Build 3종.</p><p class="note-aside">‘이 세 개를 2분 이내’는 수업 연습 목표. 공식 시험은 지정 3작품 7분.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://www.kahlua.com/en-us/drinks/white-russian/" target="_blank" rel="noopener noreferrer">화이트 러시안</a> · <a href="https://www.kahlua.com/en/drinks/kahlua-and-milk/" target="_blank" rel="noopener noreferrer">깔루아 밀크</a> · <a href="https://www.kahlua.com/en-us/about/" target="_blank" rel="noopener noreferrer">Kahlúa 이야기</a> · <a href="https://www.diageo.com/en/news-and-media/press-releases/2022/diageo-acquires-premium-cold-brew-coffee-liqueur-mr-black" target="_blank" rel="noopener noreferrer">Mr Black 소개</a></p></details>
+  </div></details>
+ </section></template>
+
+ <template id="moscow-mule-note-template"><section class="recipe-notes moscow-mule-notes" aria-label="모스코 뮬 수업 노트">
+  <p class="note-cue">보드카 1 1/2 · 라임 1/2 oz · 진저 에일 Fill · 슬라이스</p>
+  <details class="recipe-note-details"><summary>모스코 뮬 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>모스코 뮬 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>보드카 1 1/2 oz · 라임 주스 1/2 oz · 진저 에일 Fill</b></p><p>Build · 하이볼 잔 · 라임 또는 레몬 슬라이스</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>잔과 슬라이스 준비</strong><p>하이볼 잔을 칠링하고 라임 또는 레몬 슬라이스를 준비한다.</p><p class="note-aside">Moscow = 모스크바, mule = 노새. 러시아 수도 → 보드카 연상. 노새는 당나귀와 같은 동물이 아님.</p></li><li><strong>얼음과 보드카</strong><p>차가운 잔에 서비스용 얼음을 준비하고 보드카 1 1/2 oz를 넣는다.</p><p class="note-aside">기주를 먼저 넣었더라도 탄산보다 얼음을 먼저 준비하는 흐름이 좋음.</p></li><li><strong>라임 주스 1/2 oz</strong><p>라임 주스를 계량해 넣는다.</p><p class="note-aside">쿠바 리브레와 산미 용량은 같고, 기주·탄산 재료·가니시 모양이 다름.</p></li><li><strong>진저 에일 Fill</strong><p>차가운 진저 에일을 채우고 과하게 휘젓지 않게 부드럽게 섞는다.</p><p class="note-aside">시험 표는 Ginger ale. 스프라이트나 토닉으로 바꾸지 않기.</p></li><li><strong>슬라이스 장식</strong><p>코스터로 옮기고 라임 또는 레몬 슬라이스를 잔에 건다.</p><p class="note-aside">모스코 뮬은 웨지 X. 시험장에 레몬이 나올 거라는 예상은 수업 메모이며 실제 지급 재료 확인.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>업장에서는 구리 머그</h5><p>전통적인 모스코 뮬은 진저비어와 머그로 만드는 방식도 널리 쓰인다.</p><p class="note-aside">시험에서는 하이볼 잔 + 진저 에일. 토닉·진저비어·진저 에일은 서로 다른 재료. 분다버그·피버트리의 진저비어 향을 비교한 것은 수업 취향 메모.</p></section><section class="note-topic"><h5>스프라이트로 대체?</h5><p>라임과 진저 에일을 스프라이트 하나로 바꾸면 생강 풍미와 배합이 달라진다.</p><p class="note-aside">집에서 하는 변형으로는 시도할 수 있어도 이 레시피의 정답으로 대체하지 않기.</p></section><section class="note-topic"><h5>캐나다 드라이</h5><p>캐나다에서 시작한 브랜드. 국내 공식 제품은 은은한 진저향으로 소개된다.</p><p class="note-aside">영문 라벨은 향이 강하고 한글 라벨은 약하다는 수업 기억. 라벨 언어만으로 생산지·향을 확정하지 않으며 양산 생산 주장은 확인되지 않음.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://iba-world.com/iba-cocktail/moscow-mule/" target="_blank" rel="noopener noreferrer">IBA 모스코 뮬</a> · <a href="https://www.coca-cola.com/kr/ko/brands/canada-dry" target="_blank" rel="noopener noreferrer">한국 캐나다 드라이</a></p></details>
+  </div></details>
+ </section></template>
+
+ <template id="seabreeze-note-template"><section class="recipe-notes seabreeze-notes" aria-label="시브리즈 수업 노트">
+  <p class="note-cue">보드카 1 1/2 · 크랜베리 3 · 자몽 1/2 oz · 웨지</p><p class="note-taste"><span>한줄평</span> 시큼하고 씀</p>
+  <details class="recipe-note-details"><summary>시브리즈 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>시브리즈 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>보드카 1 1/2 oz · 크랜베리 주스 3 oz · 자몽 주스 1/2 oz</b></p><p>Build · 하이볼 잔 · 라임 또는 레몬 웨지</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>하이볼 잔과 웨지</strong><p>하이볼 잔을 칠링하고 라임 또는 레몬 웨지를 준비한다. 서비스용 얼음을 넣는다.</p><p class="note-aside">Sea breeze = 해풍, 바닷바람. 빨간 보드카 칵테일 → 크랜베리로 연결.</p></li><li><strong>보드카 1 1/2 oz</strong><p>보드카를 계량해 넣는다.</p><p class="note-aside">수업 지거의 큰 쪽이 1 1/2 oz라면 한 번에 계량. 모든 지거가 같은 용량은 아니므로 표시 확인.</p></li><li><strong>크랜베리 3 oz</strong><p>크랜베리 주스를 계량해 넣는다.</p><p class="note-aside">Ocean Spray·Langers 주스 병이 무거웠다는 메모. 안정적으로 받치고 잔 가까이에서, 지거를 사용해 흘리지 않기.</p></li><li><strong>자몽 1/2 oz</strong><p>자몽 주스를 계량해 넣는다.</p><p class="note-aside">레몬·라임이 아니라 자몽 반 온스!</p></li><li><strong>가볍게 젓고 웨지</strong><p>잔에서 고르게 섞고 코스터로 옮긴 뒤 웨지를 올린다.</p><p class="note-aside">모스코 뮬의 슬라이스와 비교. 콜라가 없어도 시브리즈는 웨지.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>같이 비교하기</h5><p>모스코 뮬·시브리즈는 보드카 1 1/2 oz와 하이볼 잔을 공유한다.</p><p class="note-aside">보드카라고 항상 하이볼 잔은 아님. 코스모폴리탄·애플 마티니는 칵테일 잔, 블랙 러시안은 올드 패션드 잔.</p></section><section class="note-topic"><h5>주스 병과 시간</h5><p>주스 브랜드·1.8 L 병 크기·두 손으로 받치는 동작은 수업 메모.</p><p class="note-aside">블랙 러시안·모스코 뮬과 3개 2분 연습. 탄산은 들어가지 않는 메뉴.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p></details>
+  </div></details>
+ </section></template>
+
+ <template id="cosmopolitan-note-template"><section class="recipe-notes cosmopolitan-notes" aria-label="코스모폴리탄 수업 노트">
+  <p class="note-cue">보드카 1 oz · 나머지 셋 각 1/2 oz · 빨강은 크랜베리</p><p class="note-taste"><span>한줄평</span> 상큼달달화함</p>
+  <details class="recipe-note-details"><summary>코스모폴리탄 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>코스모폴리탄 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>보드카 1 oz · 트리플 섹 1/2 oz · 라임 주스 1/2 oz · 크랜베리 주스 1/2 oz</b></p><p>Shake · 칵테일 잔 · 라임 또는 레몬 껍질 트위스트</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>잔과 껍질 트위스트</strong><p>칵테일 잔을 칠링하고 라임 또는 레몬 껍질 트위스트를 준비한다.</p><p class="note-aside">레몬 슬라이스를 만드는 손질 동작에서 껍질을 확보해 비트는 수업 방식. 제출 장식은 슬라이스 자체가 아니라 껍질 트위스트.</p></li><li><strong>셰이커 얼음과 보드카</strong><p>셰이커에 혼합용 얼음을 준비하고 보드카 1 oz를 계량해 넣는다.</p><p class="note-aside">이번 보드카 숏 드링크는 1 oz.</p></li><li><strong>세 부재료 각 1/2 oz</strong><p>트리플 섹·라임 주스·크랜베리 주스를 각각 1/2 oz 넣는다.</p><p class="note-aside">트리플 섹은 수업의 투명한 디카이퍼 병. 보드카+빨강이어도 그레나딘 X.</p></li><li><strong>닫고 셰이킹</strong><p>셰이커를 잘 닫고 고르게 섞는다.</p><p class="note-aside">사이드카·허니문과 트리플 섹+산미+Shake로 연결하되 코스모는 라임과 크랜베리.</p></li><li><strong>거르며 따르기</strong><p>칵테일 잔의 칠링 얼음·물을 비우고 스트레이너로 혼합용 얼음을 걸러 따른다.</p><p class="note-aside">따를 때 셰이커 하단을 손가락으로 받쳐 안정적으로 잡는 수업 동작.</p></li><li><strong>트위스트와 코스터</strong><p>코스터에 옮기고 라임 또는 레몬 껍질 트위스트로 장식한다.</p><p class="note-aside">시험 표는 두 과일 껍질을 허용.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>이름과 이미지</h5><p>Cosmopolitan = 세계적인, 세계시민의 이미지.</p><p class="note-aside">도수 있는 주스 같음. 드라마 ‘섹스 앤 더 시티’와 연결해 기억한 수업 메모.</p></section><section class="note-topic"><h5>Triple Sec 오해 풀기</h5><p>오렌지 리큐르이며 제품별 도수가 다르다. 높은 도수와 당도는 별개다.</p><p class="note-aside">‘3배 dry’는 당도 계산식이 아님. 40도인 제품에도 설탕이 들어간다.</p></section><section class="note-topic"><h5>뉴욕과 빨강 비교</h5><p>코스모폴리탄의 빨강은 크랜베리 1/2 oz, 뉴욕은 그레나딘 1/2 tsp.</p><p class="note-aside">둘 다 빨갛다는 이유로 재료를 바꾸지 않기.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://www.cointreau.com/us/en/faq" target="_blank" rel="noopener noreferrer">Cointreau 성분·도수</a></p></details>
+  </div></details>
+ </section></template>
+
+ <template id="apple-martini-note-template"><section class="recipe-notes apple-martini-notes" aria-label="애플 마티니 수업 노트">
+  <p class="note-cue">보드카 1 · 사워 애플 리큐르 1 · 라임 1/2 oz · 사과 슬라이스</p><p class="note-taste"><span>한줄평</span> 떫고 화한 사과맛.</p>
+  <details class="recipe-note-details"><summary>애플 마티니 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>애플 마티니 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>보드카 1 oz · 애플 퍼커 1 oz · 라임 주스 1/2 oz</b></p><p>Shake · 칵테일 잔 · 사과 슬라이스</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>칵테일 잔과 사과</strong><p>칵테일 잔을 칠링하고 사과 슬라이스를 준비한다.</p><p class="note-aside">칵테일 글라스/마티니 글라스로 부른 V형 잔. 공식 표는 사과 색을 지정하지 않음.</p></li><li><strong>얼음과 보드카 1 oz</strong><p>셰이커에 얼음을 준비하고 보드카 1 oz를 계량한다.</p><p class="note-aside">코스모폴리탄과 함께 숏 보드카 1 oz로 기억.</p></li><li><strong>애플 퍼커 1 oz</strong><p>사워 애플 리큐르 1 oz를 넣는다.</p><p class="note-aside">Apple Pucker, 수업에서는 애플 푸커로 들음. 피치트리와는 다른 리큐르.</p></li><li><strong>라임 주스 1/2 oz</strong><p>라임 주스를 1/2 oz 계량해 넣는다.</p><p class="note-aside">사이드카 레몬 1/4과 애플 마티니 라임 1/2을 비교.</p></li><li><strong>셰이크 → 잔 비우기 → 거르기</strong><p>뚜껑을 닫고 셰이킹한다. 칵테일 잔의 칠링 얼음·물을 비우고 혼합용 얼음을 걸러 따른다.</p><p class="note-aside">마티니라는 이름만 보고 Stir로 바꾸지 않기.</p></li><li><strong>사과 슬라이스와 코스터</strong><p>코스터로 옮기고 사과 슬라이스로 장식한다.</p><p class="note-aside">전통주 메뉴 ‘풋사랑’에도 사과 슬라이스가 나옴.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>마티니라는 이름</h5><p>이 시험 레시피에는 베르무트가 없다. MARTINI 브랜드와 칵테일 이름을 구분한다.</p><p class="note-aside">모양과 이름으로 연결한 수업 메모. 애플·에스프레소 마티니 같은 이름만으로 베르무트 사용을 판단하지 않기.</p></section><section class="note-topic"><h5>애플트리 병 메모</h5><p>‘2026년 10월 애플푸커가 애플트리로 이름·병이 바뀌었다’고 들은 수업 기록.</p><p class="note-aside">정확한 제품 변경은 공식 확인 전. 시험 표의 Apple Pucker(Sour apple Liqueur)와 지급 라벨을 확인. 자동 채점에서는 애플 푸커/사워 애플 리큐르 표기를 사용.</p></section><section class="note-topic"><h5>사과 색</h5><p>수업에서는 빨간 사과를 사용할 것으로 예상.</p><p class="note-aside">청사과가 여름에만 있다는 기억은 품종·유통에 따라 달라질 수 있음. 공식 표는 A Slice of Apple.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://www.dekuyperusa.com/flavor/dekuyper-pucker-sour-apple-schnapps-liqueur/" target="_blank" rel="noopener noreferrer">DeKuyper Sour Apple Pucker</a> · <a href="https://www.martini.com/a-guide-to-martini-cocktail/" target="_blank" rel="noopener noreferrer">MARTINI와 칵테일 이름</a></p></details>
+  </div></details>
+ </section></template>
+
+ <template id="pina-colada-note-template"><section class="recipe-notes pina-colada-notes" aria-label="피나 콜라다 수업 노트">
+  <p class="note-cue">라이트 럼 1 1/4 · 피나 콜라다 믹스 2 · 파인애플 2 oz</p><p class="note-taste"><span>한줄평</span> 맛있고 씁쓸한 맛이었따</p>
+  <details class="recipe-note-details"><summary>피나 콜라다 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>피나 콜라다 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>라이트 럼 1 1/4 oz · 피나 콜라다 믹스 2 oz · 파인애플 주스 2 oz</b></p><p>Blend · 필스너 잔 (받침형) · 생파인애플 웨지 + 체리</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>필스너 잔과 가니시</strong><p>필스너 잔을 먼저 칠링하고 파인애플 웨지·체리를 준비한다.</p><p class="note-aside">파인애플 모서리에 체리가 잘 안 꽂히면 과육 쪽에 안정적으로 고정하는 수업 동작.</p></li><li><strong>라이트 럼 1 1/4 oz</strong><p>라이트 럼을 계량해 블렌더에 넣는다.</p><p class="note-aside">마이 타이와 같은 럼 용량. 일반적인 보드카 1 1/2 규칙을 가져오지 않기.</p></li><li><strong>믹스와 과즙 각 2 oz</strong><p>피나 콜라다 믹스 2 oz, 파인애플 주스 2 oz를 계량한다.</p><p class="note-aside">흰색 믹스로 기억. 코코넛 럼으로 대체하지 않음.</p></li><li><strong>얼음과 블렌딩</strong><p>혼합용 얼음을 넣고 닫아 블렌딩한다.</p><p class="note-aside">빙삭 가능한 기기를 사용. 기기 이름만으로 얼음 분쇄 가능 여부를 판단하지 않기.</p></li><li><strong>잔 비우기 → 담기 → 장식</strong><p>칠링 얼음·물을 비운 필스너 잔에 블렌딩한 내용물을 담는다. 코스터와 파인애플·체리로 마무리한다.</p><p class="note-aside">과즙에도 파인애플, 장식에도 파인애플로 연결.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>맛 순위와 트로피컬</h5><p>이번 트로피컬 3종 중 개인 1위. piña는 스페인어로 파인애플.</p><p class="note-aside">‘제일 맛있었음’ 메모. 트로피컬은 이번 파인애플 중심 묶음의 연상법.</p></section><section class="note-topic"><h5>믹스 병 기억</h5><p>피나 콜라다 믹스의 제품·성분은 실제 병 라벨을 확인한다.</p><p class="note-aside">수업에서 ‘트로피컬…’, ‘Mr &amp; Mrs… 검정 라벨’로 기억한 병. 오렌지·라임·코코넛 밀크 등 성분 이야기는 완제품 믹스/업장 변형 메모로 남기며 시험 재료를 추가하지 않음.</p></section><section class="note-topic"><h5>매장과 시험</h5><p>소음 때문에 매장에서는 셰이킹으로 만들기도 한다고 들었다.</p><p class="note-aside">이 시험 표의 기법은 Blend. 블렌더/믹서라는 이름만으로 장비 기능을 둘로 나누지는 않음.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p></details>
+  </div></details>
+ </section></template>
+
+ <template id="blue-hawaiian-note-template"><section class="recipe-notes blue-hawaiian-notes" aria-label="블루 하와이안 수업 노트">
+  <p class="note-cue">라이트 럼·블루 큐라소·코코넛 럼 각 1 · 파인애플 2 1/2 oz</p><p class="note-taste"><span>한줄평</span> 술맛 생각보다 별로였음 · 3위</p>
+  <details class="recipe-note-details"><summary>블루 하와이안 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>블루 하와이안 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>라이트 럼 1 oz · 블루 큐라소 1 oz · 코코넛 플레이버드 럼 1 oz · 파인애플 주스 2 1/2 oz</b></p><p>Blend · 필스너 잔 (받침형) · 생파인애플 웨지 + 체리</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>잔과 파인애플 장식</strong><p>필스너 잔을 칠링하고 파인애플 웨지·체리를 준비한다.</p><p class="note-aside">먼저 제공 잔부터 차갑게.</p></li><li><strong>라이트 럼 1 oz</strong><p>라이트 럼을 계량해 블렌더에 넣는다.</p><p class="note-aside">럼만 1 oz인 블루로 기억.</p></li><li><strong>파란 술과 코코넛 술 각 1 oz</strong><p>블루 큐라소와 코코넛 플레이버드 럼을 각각 1 oz 넣는다.</p><p class="note-aside">Blue → 블루 큐라소, Hawaiian → 말리부로 떠올린 코코넛 럼. 블루 큐라소는 시럽이 아니라 리큐르.</p></li><li><strong>파인애플 주스 2 1/2 oz</strong><p>파인애플 주스를 계량해 넣는다.</p><p class="note-aside">이 레시피에는 라임 주스가 없음. 럼=라임 암기법의 예외!</p></li><li><strong>얼음과 블렌딩</strong><p>혼합용 얼음을 넣고 닫아 블렌딩한다.</p><p class="note-aside">큐라소는 오렌지 계열 리큐르로, 파란 제품은 색을 더한 종류로 기억.</p></li><li><strong>따르고 곧 제출</strong><p>잔의 칠링 얼음·물을 비우고 블렌딩한 내용물을 담아 코스터·가니시로 마무리한다.</p><p class="note-aside">수업 관찰: 시간이 지나 파랑~하양으로 분리되어 보임. 모든 블렌드가 같은 속도로 분리된다는 법칙은 아님.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>Blue Hawaii와 구분</h5><p>시험 표의 메뉴명은 Blue Hawaiian이며 위 네 재료가 기준이다.</p><p class="note-aside">Blue Hawaii라는 다른 이름·배합도 있지만 이 시험 메뉴 이름을 고치지 않기.</p></section><section class="note-topic"><h5>맛과 병 연상</h5><p>이번 트로피컬 3종 중 개인 3위.</p><p class="note-aside">말리부 병의 하와이 이미지, 파란 큐라소, 파인애플을 한 묶음으로. 코코넛 럼과 라이트 럼은 둘 다 넣음.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://www.bacardi.com/uk/en/rum-cocktails/blue-hawaii/" target="_blank" rel="noopener noreferrer">Blue Hawaii와 변형</a> · <a href="https://stories.hilton.com/hilton-history/creating-the-blue-hawaii" target="_blank" rel="noopener noreferrer">원조 호텔의 Blue Hawaii</a></p></details>
+  </div></details>
+ </section></template>
+
+ <template id="mai-tai-note-template"><section class="recipe-notes mai-tai-notes" aria-label="마이 타이 수업 노트">
+  <p class="note-cue">럼 1 1/4 + 트리플 섹 3/4 = 2 · 파라오 각 1 · 그레나딘 1/4 oz</p><p class="note-taste"><span>한줄평</span> 시고 쌉싸름 단맛. 2위</p>
+  <details class="recipe-note-details"><summary>마이 타이 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>마이 타이 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>라이트 럼 1 1/4 oz · 트리플 섹 3/4 oz · 라임 주스 1 oz · 파인애플 주스 1 oz · 오렌지 주스 1 oz · 그레나딘 시럽 1/4 oz</b></p><p>Blend · 필스너 잔 (받침형) · 생파인애플 웨지(오렌지) + 체리</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>필스너 잔과 가니시</strong><p>필스너 잔을 칠링하고 파인애플 또는 오렌지 웨지와 체리를 준비한다.</p><p class="note-aside">수업은 파인애플로 연결. 공식 표는 파인애플(오렌지)과 체리.</p></li><li><strong>라이트 럼 1 1/4 oz</strong><p>라이트 럼을 계량해 블렌더에 넣는다.</p><p class="note-aside">피나 콜라다와 같은 1 1/4 oz.</p></li><li><strong>트리플 섹 3/4 oz</strong><p>트리플 섹을 넣는다.</p><p class="note-aside">두 술을 더하면 2 oz: 1 1/4 + 3/4.</p></li><li><strong>파라오 각 1 oz</strong><p>파인애플·라임·오렌지 주스를 각각 1 oz 넣는다.</p><p class="note-aside">파·라·오 = 파인애플 / 라임 / 오렌지. 라임이 1/2가 아닌 1 oz!</p></li><li><strong>그레나딘 1/4 oz</strong><p>그레나딘 시럽을 계량해 넣는다.</p><p class="note-aside">럼의 1 1/4와 시럽의 1/4를 연결. 뉴욕의 tsp와 다름.</p></li><li><strong>얼음 → 블렌딩 → 담기</strong><p>얼음을 넣고 블렌딩한다. 잔의 칠링 얼음·물을 비우고 내용물을 담아 코스터로 옮긴다.</p><p class="note-aside">시험에서는 Blend.</p></li><li><strong>웨지와 체리</strong><p>파인애플 또는 오렌지 웨지와 체리로 마무리한다.</p><p class="note-aside">파인애플 주스와 가니시를 함께 떠올리기.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>난이도와 이름</h5><p>재료 6개라 개인 체감 난도 상. Mai Tai는 타히티어의 ‘최고’와 연결해 기억.</p><p class="note-aside">‘최악, 난이도 상’은 만들 때의 느낌. 맛 순위는 트로피컬 중 2위!</p></section><section class="note-topic"><h5>집에서의 취향</h5><p>수업 메모: 라임을 1/3로 줄이면 덜 시어서 괜찮았음.</p><p class="note-aside">1/3이 정확히 어떤 단위인지 확정하지 않고 취향 기록으로만 보관. 시험·퀴즈 정답은 라임 1 oz.</p></section><section class="note-topic"><h5>주류 합과 과즙 묶음</h5><p>술 둘은 합쳐 2 oz, 파라오 셋은 각각 1 oz, 시럽은 1/4 oz.</p><p class="note-aside">피나 콜라다와 럼 용량은 같지만 믹스·과즙 배합은 모두 다름.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://tradervics.com/pages/history-of-the-mai-tai" target="_blank" rel="noopener noreferrer">Trader Vic’s의 Mai Tai 이야기</a></p></details>
+  </div></details>
+ </section></template>
+
+ <template id="cuba-libre-note-template"><section class="recipe-notes cuba-libre-notes" aria-label="쿠바 리브레 수업 노트">
+  <p class="note-cue">라이트 럼 1 1/2 · 라임 1/2 oz · 콜라 Fill · 레몬 웨지</p><p class="note-taste"><span>한줄평</span> 달긴한데 써. 담배맛....?</p>
+  <details class="recipe-note-details"><summary>쿠바 리브레 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>쿠바 리브레 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>라이트 럼 1 1/2 oz · 라임 주스 1/2 oz · 콜라 Fill</b></p><p>Build · 하이볼 잔 · 레몬 웨지</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>하이볼 잔과 레몬 웨지</strong><p>잔을 칠링하고 레몬 웨지를 준비한 뒤 서비스용 얼음을 넣는다.</p><p class="note-aside">쿠바의 자유 → 럼으로 연결. 모스코 뮬의 슬라이스와 구분.</p></li><li><strong>라이트 럼 1 1/2 oz</strong><p>라이트 럼을 계량해 넣는다.</p><p class="note-aside">‘럼·라임 둘 다 1/2’는 끝의 분수 연상. 럼 전체 용량은 반드시 1 1/2 oz.</p></li><li><strong>라임 주스 1/2 oz</strong><p>라임 주스를 계량해 넣는다.</p><p class="note-aside">럼콕에 라임을 더하면 쿠바 리브레로 연결.</p></li><li><strong>콜라 Fill</strong><p>차가운 콜라를 채우고 탄산이 과하게 빠지지 않도록 가볍게 섞는다.</p><p class="note-aside">모스코 뮬은 진저 에일, 이 메뉴는 콜라.</p></li><li><strong>레몬 웨지와 코스터</strong><p>코스터로 옮기고 레몬 웨지로 마무리한다.</p><p class="note-aside">주스는 라임, 가니시는 레몬 웨지.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>세 가지 콜라 조합</h5><p>잭 다니엘스+콜라 = 잭콕, 럼+콜라 = 럼콕, 럼+콜라+라임 = 쿠바 리브레로 비교한다.</p><p class="note-aside">버번+콜라 조합과 가성비 이야기도 취향 메모. 시험 재료를 잭 다니엘스로 바꾸지는 않기.</p></section><section class="note-topic"><h5>쿠바 이야기</h5><p>Cuba Libre = 자유로운 쿠바. 사탕수수·럼으로 연상한 수업 메모.</p><p class="note-aside">헤밍웨이의 쿠바 리브레·다이키리·모히토 순위는 확인되지 않은 수업 이야기로만 남김.</p></section><section class="note-topic"><h5>모스코 뮬과 다른 세 가지</h5><p>보드카→럼, 진저 에일→콜라, 슬라이스→레몬 웨지.</p><p class="note-aside">두 메뉴 모두 하이볼·Build, 기주 1 1/2 oz와 라임 1/2 oz는 같음.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p></details>
+  </div></details>
+ </section></template>
+
+ <template id="daiquiri-note-template"><section class="recipe-notes daiquiri-notes" aria-label="다이키리 수업 노트">
+  <p class="note-cue">라이트 럼 1 3/4 · 라임 3/4 oz · 가루 설탕 1 tsp · Shake</p>
+  <details class="recipe-note-details"><summary>다이키리 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>다이키리 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>라이트 럼 1 3/4 oz · 라임 주스 3/4 oz · 가루 설탕 1 tsp</b></p><p>Shake · 칵테일 잔 · 없음</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>칵테일 잔과 셰이커 얼음</strong><p>제공 잔을 칠링하고 셰이커에 혼합용 얼음을 넣는다.</p><p class="note-aside">설탕이 들어가는 셰이크 메뉴. 올드 패션드·레몬 스쿼시는 설탕이 있어도 Build인 예외.</p></li><li><strong>라이트 럼 1 3/4 oz</strong><p>라이트 럼을 계량해 넣는다.</p><p class="note-aside">1 1/4가 아님! 다이키리·바카디는 1 3/4.</p></li><li><strong>라임 주스 3/4 oz</strong><p>라임 주스를 계량해 넣는다.</p><p class="note-aside">기주의 분수 3/4를 라임 3/4와 연결.</p></li><li><strong>가루 설탕 1 tsp</strong><p>설탕을 깎아서 한 티스푼 넣는다.</p><p class="note-aside">바카디의 그레나딘 1 tsp와 비교.</p></li><li><strong>셰이킹 → 거르기</strong><p>닫고 셰이킹한다. 칵테일 잔의 칠링 얼음·물을 버리고 혼합용 얼음을 걸러 따른다.</p><p class="note-aside">가니시 없이 코스터에 제출.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>쿠바와 라임</h5><p>쿠바의 다이키리라는 지명, 광산과 노동자 이야기로 연결해 외운 수업 메모.</p><p class="note-aside">더운 곳의 럼+라임이라는 연상. 세부 역사 이야기는 레시피 정답 조건으로 쓰지 않음.</p></section><section class="note-topic"><h5>바카디와 한 쌍</h5><p>다이키리는 일반 라이트 럼 + 설탕, 바카디는 지정 바카디 럼 + 그레나딘.</p><p class="note-aside">럼과 라임의 용량은 두 메뉴가 같음. 이름만 보고 서로 바꾸지 않기.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p></details>
+  </div></details>
+ </section></template>
+
+ <template id="bacardi-note-template"><section class="recipe-notes bacardi-notes" aria-label="바카디 칵테일 수업 노트">
+  <p class="note-cue">바카디 럼 화이트 1 3/4 · 라임 3/4 oz · 그레나딘 1 tsp</p>
+  <details class="recipe-note-details"><summary>바카디 칵테일 실습 순서 · 수업 필기</summary><div class="note-detail-body">
+   <header class="note-heading"><h4>바카디 칵테일 필기</h4><span>기본 순서 + 꼬미체 부가 메모</span></header>
+   <div class="note-basics"><p><b>바카디 럼 화이트 1 3/4 oz · 라임 주스 3/4 oz · 그레나딘 시럽 1 tsp</b></p><p>Shake · 칵테일 잔 · 없음</p></div>
+   <section class="mn-flow mn-practice"><h5>실습 순서 · 수업 연습용</h5><ol><li><strong>칵테일 잔과 셰이커 얼음</strong><p>제공 잔을 칠링하고 셰이커에 혼합용 얼음을 넣는다.</p><p class="note-aside">다이키리와 같은 Shake·칵테일 잔·가니시 없음.</p></li><li><strong>바카디 럼 화이트 1 3/4 oz</strong><p>Bacardi Rum White로 지정된 병의 라벨을 확인하고 계량한다.</p><p class="note-aside">바카디는 럼 회사. 이 메뉴는 브랜드까지 지정된 기주.</p></li><li><strong>라임 주스 3/4 oz</strong><p>라임 주스를 계량해 넣는다.</p><p class="note-aside">다이키리와 같은 3/4 oz.</p></li><li><strong>그레나딘 시럽 1 tsp</strong><p>그레나딘 시럽 한 티스푼을 넣는다.</p><p class="note-aside">설탕 X, 1 oz X. 다이키리의 설탕 1 tsp를 그레나딘 1 tsp로 비교.</p></li><li><strong>셰이킹 → 거르기 → 코스터</strong><p>닫고 셰이킹하고, 칵테일 잔의 칠링 얼음·물을 비운 뒤 혼합용 얼음을 걸러 따른다. 장식 없이 코스터로 옮긴다.</p><p class="note-aside">병 선택부터 정확히.</p></li></ol></section>
+   <div class="note-topic-grid"><section class="note-topic"><h5>라이트 럼과 지정 브랜드</h5><p>다이키리의 Light Rum에는 조건에 맞는 화이트 럼을 쓸 수 있지만, 바카디 칵테일은 Bacardi Rum White 지정이다.</p><p class="note-aside">Barton·Old Nick·휘경동 시험장 병 이야기는 수업 기억. 실제 지급품과 라벨을 확인하고 다른 브랜드로 임의 대체하지 않기.</p></section><section class="note-topic"><h5>실격이라는 강조</h5><p>지정 기주를 틀리지 않도록 주의한다.</p><p class="note-aside">‘다른 럼 한 번 쓰면 무조건 실격’이라는 단독 규정은 공개문제에서 확인되지 않음. 공개된 실격 조건은 주재료 오류가 여러 과제에 걸친 경우나 한 과제에서 재료 오류가 2가지 이상인 경우 등을 구분.</p></section><section class="note-topic"><h5>홍보와 이름</h5><p>Bacardi라는 회사 이름이 들어간 칵테일로 연상한다.</p><p class="note-aside">브랜드의 칵테일 이름 보호 이야기는 한국 시험의 실격 규정과 별개.</p></section></div>
+   <details class="mn-sources"><summary>수업 메모·자료 기준</summary><p>재료·용량·기법·잔·가니시는 기존 큐넷 2026 레시피 기준입니다. 개인 맛과 수업의 연상·제품 기억은 공식 규격과 구분합니다.</p><p><a href="https://www.bacardi.com/culture/history/" target="_blank" rel="noopener noreferrer">Bacardi 역사</a></p></details>
+  </div></details>
+ </section></template>
+ <noscript><p class="notice">암기 자료를 보려면 JavaScript를 허용해 주세요.</p></noscript>
+</body></html>
