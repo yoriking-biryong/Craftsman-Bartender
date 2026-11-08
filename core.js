@@ -6,7 +6,7 @@
  const sample=(a,n)=>shuffle(a).slice(0,n);
  function ice(c){
    if(c.method==='Float'||c.number===30)return '완성 잔에 얼음 없음';
-   if(c.method==='Blend')return '분쇄 얼음과 블렌딩';
+   if(c.method==='Blend')return '제출 잔의 칠링 얼음으로 블렌딩';
    if(['cocktail','saucer','sour','flute'].includes(c.glass))return '혼합용 얼음을 걸러 제출';
    return '완성 잔에 큐브 얼음';
  }
@@ -48,9 +48,10 @@
      const vessel=shaken?'셰이커':stirred?'믹싱 글라스':blended?'블렌더':'준비한 잔';
      const late=c.ingredients.filter(x=>x.finish||x.amount==='Fill'||x.amount==='On Top'||c.number===36&&x.id==='sprite');
      const first=c.ingredients.filter(x=>!late.includes(x));
+     if(blended)add('시험 시간 기준: 제출할 '+D.glasses[c.glass][0]+'에 얼음을 계량해 한 번 칠링한다.',[['잔','글라스','glass'],['얼음','ice'],['칠링','차게']],{phase:'chill'});
      if(!blended&&c.number!==30)add(vessel+'에 큐브 얼음을 넣어 차게 준비한다.',[[shaken?'셰이커':stirred?'믹싱':'잔',shaken?'쉐이커':stirred?'mixing':'글라스'],['얼음','ice']],{phase:'ice'});
-     for(const x of first)ingredientStep(x,vessel);
-     if(blended)add('계량한 재료가 담긴 블렌더에 분쇄 얼음을 넣는다. 얼음의 정량은 공식 표에 없다.',[['블렌더','blender'],['얼음','ice']],{phase:'ice'});
+     if(blended)add('칠링한 얼음을 제출 잔에서 바로 블렌더 통으로 옮긴다.',[['잔','글라스','glass'],['블렌더','blender'],['얼음','ice'],['옮','이동']],{phase:'ice'});
+     for(const x of first)ingredientStep(x,blended?'얼음이 담긴 블렌더 통':vessel);
      if(shaken)add('뚜껑을 닫은 셰이커를 흔들어 내용물을 차게 섞는다.',[['흔들','셰이크','쉐이크','shake']],{phase:'mix'});
      else if(stirred)add('믹싱 글라스 안의 내용물을 바 스푼으로 저어 차게 섞는다.',[['믹싱','mixing'],['저어','젓','스터','stir']],{phase:'mix'});
      else if(blended)add('뚜껑을 닫은 블렌더를 작동해 재료와 얼음을 고르게 간다.',[['블렌더','blender'],['작동','간다','블렌딩','blend']],{phase:'mix'});
@@ -89,7 +90,7 @@
      if(x.verified)list.push({key:'amount-'+i,label:(i+1)+'번 용량',answer:x.amount,bank:amountOptions(x.amount),section:'용량'});
    }
    list.push({key:'method',label:'조주법',answer:c.method,bank:[...new Set(D.cocktails.map(v=>v.method))],section:'기법'});
-   list.push({key:'ice',label:'얼음 처리 · 학습 예시',answer:ice(c),bank:['완성 잔에 얼음 없음','분쇄 얼음과 블렌딩','혼합용 얼음을 걸러 제출','완성 잔에 큐브 얼음'],section:'얼음'});
+   list.push({key:'ice',label:'얼음 처리 · 학습 예시',answer:ice(c),bank:['완성 잔에 얼음 없음',c.method==='Blend'?ice(c):'분쇄 얼음과 블렌딩','혼합용 얼음을 걸러 제출','완성 잔에 큐브 얼음'],section:'얼음'});
    list.push({key:'garnish',label:'가니시',answer:D.garnishes[c.garnish],bank:Object.values(D.garnishes),section:'가니시'});
    return list;
  }

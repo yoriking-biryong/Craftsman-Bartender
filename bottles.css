@@ -1,0 +1,34 @@
+.bottle-photo{display:block;object-fit:contain;max-width:100%;mix-blend-mode:multiply}
+.ingredient-tile .bottle-photo{width:100%;height:92px;margin:0 auto 7px}
+.ingredient-tile.used .bottle-photo{filter:grayscale(1);opacity:.55}
+.bottle-strip{grid-column:1/-1;min-width:0;margin:12px 0 2px;padding:10px 0 0;border-top:1px solid #e6d9bf}
+.bottle-strip-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:12px;color:#725139}
+.bottle-strip-heading>span{font-size:10px;font-weight:400;color:#8b7a64}
+.bottle-row{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:stretch}
+.bottle-tile{min-width:0;border:0;border-radius:5px;background:transparent;display:flex;flex-direction:column;align-items:center;text-align:center;padding:7px 4px;line-height:1.45;color:#514334;transition:background .15s}
+.bottle-tile:hover{background:#f2ebdc}.bottle-tile:focus-visible{outline:2px solid #ad4930;outline-offset:2px}
+.bottle-row .bottle-tile{flex:0 1 104px;width:104px}
+.bottle-row .bottle-photo{width:84px;height:90px;margin-bottom:7px}
+.bottle-ingredient{font-size:11px;font-weight:650}
+.bottle-tile small{font-size:10px;color:#89725c;line-height:1.4;margin-top:2px;overflow-wrap:anywhere}
+.bottle-caption{font:400 10px/1.6 Pretendard,'Malgun Gothic',sans-serif;color:#8b7a64;margin-top:7px}
+.bottle-viewer{width:min(800px,calc(100% - 32px));max-width:800px;max-height:calc(100dvh - 32px);padding:0;border:1px solid #d7c8ab;border-radius:12px;background:#fffaf0;color:#514334;overflow:auto}
+.bottle-viewer::backdrop{background:#2920179c;backdrop-filter:blur(3px)}
+.bottle-viewer-inner{position:relative;padding:45px 28px 28px;display:grid;grid-template-columns:minmax(150px,2fr) minmax(0,3fr);gap:28px}
+.bottle-close{position:absolute;right:12px;top:10px;font-size:12px;padding:5px 10px;min-height:30px}
+.bottle-large{display:flex;justify-content:center;align-items:start}.bottle-large .bottle-photo{width:100%;height:420px;max-height:55dvh}
+.bottle-description h2{font-size:25px;line-height:1.35;margin:8px 0 15px}.bottle-description p{font-size:13px;line-height:1.7;margin:8px 0}
+.bottle-description .bottle-english{font-size:12px;color:#8b7a64;margin-top:-5px}.bottle-description h3{font-size:14px;margin:22px 0 10px}
+.bottle-uses{display:flex;gap:6px;flex-wrap:wrap}.bottle-uses a{font-size:12px;padding:5px 9px;border-radius:4px;background:#eee8d8;color:#725139;text-decoration:none}
+.bottle-description .bottle-caption{font-size:11px;margin-top:18px}.bottle-source-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:#8c4d33}
+.bottle-gallery-intro{max-width:720px}.bottle-gallery-intro h1{font-size:32px;margin:8px 0 10px}.bottle-gallery-intro p{font-size:14px;line-height:1.75;color:#806b55}
+.bottle-toolbar{display:flex;gap:10px;margin:24px 0 12px;flex-wrap:wrap}.bottle-toolbar input{flex:1;min-width:200px}.bottle-toolbar select{min-width:130px}.bottle-toolbar button{font-size:13px}
+.bottle-count{font-size:12px;color:#8b7a64;margin-bottom:16px}
+.bottle-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px 12px}
+.bottle-gallery .bottle-tile{border-bottom:1px solid #e6d9bf;border-radius:0;padding:12px 8px 18px}
+.bottle-gallery .bottle-photo{height:176px;width:100%;margin-bottom:15px}.bottle-gallery .bottle-ingredient{font-size:13px}.bottle-gallery .bottle-tile small{font-size:11px}
+.bottle-category{font-size:10px;color:#64704d;margin-top:8px}.bottle-empty{grid-column:1/-1;padding:30px;text-align:center;font-size:14px}
+.bottle-library-link{margin:0 0 12px;font-size:12px}.bottle-library-link a{color:#8c4d33;text-underline-offset:3px}
+@media(max-width:900px){.bottle-gallery{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:580px){.bottle-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px}.bottle-gallery .bottle-photo{height:160px}.bottle-viewer-inner{grid-template-columns:1fr;padding:45px 20px 22px;gap:14px}.bottle-large .bottle-photo{height:230px}.bottle-description h2{font-size:22px}.bottle-row .bottle-tile{flex-basis:calc((100% - 16px)/3);width:calc((100% - 16px)/3)}.bottle-strip-heading>span{font-size:9px}.bottle-toolbar input{flex-basis:100%}.bottle-toolbar select{flex:1}.bottle-gallery-intro h1{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.bottle-tile{transition:none}}

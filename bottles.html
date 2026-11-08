@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#ad4930"><title>술병 도감 · 조주 연습장</title>
+ <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest">
+ <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="bottles.css">
+ <script defer src="data.js"></script><script defer src="bottle-data.js"></script><script defer src="art.js"></script><script defer src="bottles.js"></script><script defer src="offline.js"></script>
+</head>
+<body>
+ <a class="skip" href="#main">본문으로 이동</a>
+ <header class="header"><div class="header-inner"><a class="brand" href="index.html#practice"><span class="seal" id="brand-mark"></span><span>조주 연습장<small>조주기능사 실기 노트</small></span></a><nav aria-label="주 메뉴"><a href="index.html#practice">실기 연습</a><a href="index.html#catalog">칵테일 도감 <span>40</span></a><a href="memory.html">22종 암기</a><a href="bottles.html" class="active" aria-current="page">술병 도감</a></nav><span class="edition">COCKTAIL NOTES / 2026</span></div></header>
+ <main id="main" tabindex="-1">
+  <div class="bottle-gallery-intro"><div class="eyebrow">BOTTLE NOTEBOOK</div><h1>이 재료, 이 병.</h1><p>전체 40개 레시피에 쓰는 술 38종을 모았어요.<br>재료명과 병 라벨을 함께 보고, 사진을 눌러 들어가는 칵테일까지 연결해 보세요.</p></div>
+  <div class="bottle-toolbar"><label class="sr-only" for="bottle-search">술병·재료·칵테일 검색</label><input id="bottle-search" type="search" placeholder="올드 닉, 베르무트, 맨해튼…"><label class="sr-only" for="bottle-category">술 종류</label><select id="bottle-category"></select><button id="bottle-reset" type="button">초기화</button></div>
+  <p class="bottle-count" id="bottle-count" role="status"></p><div class="bottle-gallery" id="bottle-gallery"></div>
+  <p class="bottle-caption">수업에서 언급한 브랜드를 우선한 제품 사진 예시입니다. 병 디자인은 지역·시기에 따라 달라질 수 있으며 시험장 지급 제품을 보장하지 않습니다. 각 사진의 확대 창에서 출처를 확인할 수 있습니다.</p>
+ </main>
+ <footer><span>조주 연습장 · 이름과 병을 함께 기억해요.</span><div class="footer-links"><span id="offline-status">오프라인 준비 확인 중</span><a href="memory.html">암기 노트로 ↗</a></div></footer>
+ <noscript><p class="notice">술병 도감을 보려면 JavaScript를 허용해 주세요.</p></noscript>
+</body></html>

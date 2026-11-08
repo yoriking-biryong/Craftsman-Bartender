@@ -45,12 +45,12 @@
 .note-taste>span{font-family:Pretendard,sans-serif;font-size:10px;color:#9b8a72;margin-right:7px}
 .recipe-note-details{padding:0;border:0;margin:0}
 .recipe-note-details>summary{font-size:12px;color:#8b4e37;cursor:pointer;min-height:32px;padding:6px 0}
-.recipe-note-details[open]>summary{border-bottom:1px solid #dbcbb1;margin-bottom:12px}
+.recipe-note-details[open]>summary{border-bottom:0;margin-bottom:12px}
 .memory-overview .memory-recipe:has(.recipe-note-details[open]){grid-column:1/-1}
 .memory-overview .memory-recipe:has(.recipe-note-details[open]) .memory-recipe-body{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
 .memory-overview .memory-recipe:has(.recipe-note-details[open]) .memory-spec{border-top:0;border-left:1px solid #e2d7c6;padding:0 0 0 24px;align-content:center}
 .memory-overview .memory-recipe:has(.recipe-note-details[open]) .memory-tip{grid-column:1/-1}
-.note-detail-body{background:#fff9eb;border:1px solid #e5d9bf;padding:17px 20px;border-radius:4px}
+.note-detail-body{background:#fff9eb;border:0;padding:17px 20px;border-radius:4px}
 .note-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
 .note-heading h4{font-size:17px}.note-heading>span{font-size:10px;color:#9a886c}
 .recipe-notes h5{font:650 14px/1.5 Pretendard,sans-serif;color:#725139;margin:0 0 8px}
@@ -60,12 +60,13 @@
 .mn-flow{padding:0 0 14px;margin-bottom:15px;border-bottom:1px solid #ddcfb4}
 .mn-practice ol{list-style:none;counter-reset:note-step;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;padding:0;margin:12px 0}
 .mn-practice li{counter-increment:note-step;min-width:0;position:relative;padding:0 0 10px 24px;border-bottom:1px solid #e6d9bf}
+.mn-practice li:last-child,.mn-practice li:nth-last-child(2):nth-child(odd){border-bottom:0}
 .mn-practice li:before{content:counter(note-step);position:absolute;top:0;left:0;font:650 12px/1.7 Pretendard,sans-serif;color:#7f8965}
 .mn-practice li>strong{display:block;font-size:13px;margin-bottom:4px}
 .mn-practice li p{font-size:12px;line-height:1.7}
 .mn-order-reminder{padding:8px 11px;background:#eee9cb;font-size:12px;color:#656744;border-radius:3px;line-height:1.7}
 .mn-memos,.note-topic-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
-.mn-memos>section,.note-topic{min-width:0;border-bottom:1px solid #e5d8bf;padding-bottom:12px}
+.mn-memos>section,.note-topic{min-width:0;border-bottom:0;padding-bottom:12px}
 .mn-small,.note-aside,.mn-memos p,.mn-highlight,.mn-bottles{font-family:'KNPS Kkomi',Pretendard,sans-serif;font-weight:400;font-size:18px;line-height:1.45;color:#806b50;letter-spacing:0}
 .mn-practice li .mn-small,.mn-practice li .note-aside{font-family:'KNPS Kkomi',Pretendard,sans-serif;font-size:17px;line-height:1.45}
 .mn-memos strong,.mn-bottles strong{font-weight:400}.mn-highlight{display:inline-block;background:#eee9cb;padding:1px 7px;color:#67754e}
@@ -78,8 +79,15 @@
 .garnish-sketches svg{display:block;width:72px;max-width:100%;height:54px;margin:0 auto}
 .garnish-sketches figcaption{font-size:11px;line-height:1.6}.garnish-sketches figcaption b,.garnish-sketches figcaption span{display:block}.garnish-sketches figcaption span{font-size:10px;color:#8d7d62}
 .note-cutting{margin:8px 0;padding-left:18px;font-size:12px}.note-cutting li{padding:2px 0}
-.mn-sources{font:11px/1.8 Pretendard,sans-serif;padding-top:10px;margin-top:15px;border-top:1px solid #dfd3bc;color:#8b7a63}
+.mn-sources{font:11px/1.8 Pretendard,sans-serif;padding-top:10px;margin-top:15px;border-top:0;color:#8b7a63}
 .mn-sources summary{font-size:11px;cursor:pointer}.mn-sources p{margin-top:7px}.mn-sources ul{padding-left:18px}.mn-sources a{color:#866745}
-@media(max-width:800px){.common-prep-grid{grid-template-columns:1fr;gap:13px}.common-prep-brief{grid-template-columns:1fr;gap:4px}.mn-practice ol,.mn-memos,.note-topic-grid{grid-template-columns:1fr}.note-detail-body{padding:14px 16px}}
+@media(max-width:800px){.common-prep-grid{grid-template-columns:1fr;gap:13px}.common-prep-brief{grid-template-columns:1fr;gap:4px}.mn-practice ol,.mn-memos,.note-topic-grid{grid-template-columns:1fr}.mn-practice li:nth-last-child(2):nth-child(odd){border-bottom:1px solid #e6d9bf}.note-detail-body{padding:14px 16px}}
 @media(max-width:580px){.memory-page:has(.memory-overview) .memory-heading h1{font-size:26px}.memory-page:has(.memory-overview) .memory-heading p{font-size:11px}.memory-page:has(.memory-overview) .memory-score{min-width:84px;padding:9px}.memory-page:has(.memory-overview) .memory-modes a{padding:8px 6px;font-size:12px}.memory-overview .memory-grid{gap:12px}.memory-overview .memory-recipe-head{min-height:70px}.common-prep{padding:11px 13px}.common-prep-head{align-items:start}.common-prep-head h2{font-size:13px}.common-prep-head>span{display:none}.note-heading{display:block}.note-heading>span{display:block;margin-top:3px}.memory-overview .memory-recipe:has(.recipe-note-details[open]) .memory-recipe-body{display:block}.memory-overview .memory-recipe:has(.recipe-note-details[open]) .memory-spec{border-left:0;border-top:1px solid #e2d7c6;padding:8px 0 0}.note-detail-body{padding:13px}.mn-practice ol{gap:10px}.recipe-notes{padding:0 15px 10px}.note-aside,.mn-small,.mn-memos p{font-size:18px}}
 @media print{.memory-page:has(.memory-overview) .memory-heading{padding:0 0 10px}.memory-overview .memory-grid{grid-template-columns:1fr 1fr;gap:10px}.common-prep{break-inside:avoid}.memory-overview .memory-recipe:has(.recipe-note-details[open]){break-inside:auto}.mn-practice li,.note-topic,.mn-memos>section{break-inside:avoid}.mn-sources{display:none}.note-detail-body{background:white}}
+
+/* 바카디 필기의 브랜드·종류 비교표만 적용 */
+.bacardi-notes .note-brand-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:8px 0 10px;font:inherit}
+.bacardi-notes .note-brand-table th,.bacardi-notes .note-brand-table td{text-align:left;vertical-align:top;padding:6px 8px 6px 0;overflow-wrap:anywhere}
+.bacardi-notes .note-brand-table thead th{font-size:11px;color:#725139;border-bottom:1px solid #e6d9bf}
+.bacardi-notes .note-brand-table thead th:first-child{width:27%}
+.bacardi-notes .note-brand-table tbody th{font-weight:650;color:#725139}
