@@ -193,3 +193,8 @@
 - 파일: bokbunja.png
 - 제품·사진 출처: https://soollove.com/product/detail.html?cate_no=84&display_group=1&product_no=1898
 - 원본 이미지: https://soollove.com/web/product/big/202508/e62ab2a4031960f9d7ff471e0910c595.jpg
+
+
+## 2026-11-14 배경 편집
+
+실기와 술병 도감에서 흰 배경이 남았던 24개 제품 사진을 내장 이미지 편집 도구로 투명 배경 PNG로 정리했습니다. 제품 식별용 사진 편집본이며, 원본 링크와 권리 표기는 위 목록을 유지합니다. 원본과 편집본의 세부 라벨·윤곽에는 차이가 있을 수 있습니다.
