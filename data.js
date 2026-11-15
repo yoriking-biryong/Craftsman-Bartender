@@ -11,6 +11,8 @@
     note: '2026년 제1회 실기부터 적용. 변경 내역에 공개 레시피 내용 변경 없음으로 명시되어 있습니다.'
   };
   const ingredients = {
+    tomato: ['토마토 주스', 'Tomato Juice', '주스', '#c25745'],
+    sloeGin: ['슬로 진', 'Sloe Gin', '리큐르', '#79485a'],
     grenadine: ['그레나딘 시럽', 'Grenadine Syrup', '시럽', '#ca4660'],
     mintGreen: ['크렘 드 멘트 그린', 'Crème de Menthe (Green)', '리큐르', '#50a46a'],
     brandy: ['브랜디', 'Brandy', '브랜디', '#bf8541'],
@@ -84,7 +86,7 @@
   const garnishes = {
     none: '없음', cherry: '체리', olive: '그린 올리브', orangeCherry: '오렌지 슬라이스 + 체리', nutmeg: '넛메그 가루',
     salt: '소금 리밍', lemonCherry: '레몬 슬라이스 + 체리', lemonTwist: '레몬 껍질 트위스트', pineappleCherry: '생파인애플 웨지 + 체리',
-    lemonWedge: '레몬 웨지', citrusWedge: '라임 또는 레몬 웨지', apple: '사과 슬라이스', maiTai: '생파인애플 웨지(오렌지) + 체리',
+    lemonWedge: '레몬 웨지', citrusWedge: '라임 또는 레몬 웨지', apple: '사과 슬라이스', maiTai: '생파인애플 웨지 + 체리',
     citrusTwist: '라임 또는 레몬 껍질 트위스트', citrusSlice: '라임 또는 레몬 슬라이스', lemonSlice: '레몬 슬라이스', orangeTwist: '오렌지 껍질 트위스트'
   };
   // Numeric values below retain the Q-Net oz/tsp/dash/part/ea units. No Fill amount is inferred.
@@ -136,7 +138,42 @@
     const base = number===38||number===39 ? '무알코올' : number>=32&&number<=36 ? '전통주' : ingredients[list[0].id][2];
     return {id:'jj-'+String(number).padStart(2,'0'),number,name,en,method,glass,garnish,ingredients:list,tip,base,color:colors[i],page:number<=14?1:number<=29?2:3};
   });
-  const data={source,ingredients,glasses,garnishes,cocktails};
+  // Overlapping fruit alternatives must never be competing wrong answers.
+  function garnishOptions(answer){
+    const families=[['pineappleCherry','maiTai'],['lemonWedge','citrusWedge'],['lemonTwist','citrusTwist'],['lemonSlice','citrusSlice']];
+    const overlap=families.find(ids=>ids.includes(answer))||[answer];
+    return [answer,...Object.keys(garnishes).filter(id=>!overlap.includes(id))].filter((id,n,ids)=>ids.findIndex(other=>garnishes[other]===garnishes[id])===n);
+  }
+  const data={source,ingredients,glasses,garnishes,garnishOptions,cocktails};
+  cocktails.find(c=>c.number===1).base='브랜디';
+  // Local edits overlay the distributed recipe data; the packaged originals stay intact.
+  data.edits=(()=>{
+    const key='joju-content-edits'+(typeof location!=='undefined'&&new URLSearchParams(location.search).has('qa')?'-qa':'')+'-v1';
+    const slots=new Map();let values={},error='',bound=false;
+    const escapeText=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    try{if(typeof localStorage!=='undefined'){const v=JSON.parse(localStorage.getItem(key)||'{}');if(v&&v.version===1&&v.values&&typeof v.values==='object'&&!Array.isArray(v.values))values=v.values;}}catch{error='저장된 수정 내용을 읽지 못했습니다.';}
+    function add(path,obj,field,{html=false,options=null,amount=false}={}){
+      const original=obj[field];slots.set(path,{obj,field,original,html,options,amount});apply(path);
+    }
+    function valid(path,text){const s=slots.get(path);return !!s&&typeof text==='string'&&text.length<=40000&&(!s.amount||!/[\/]0+(?:\s|$)/.test(text))&&(!s.options||s.options.includes(text))&&(!s.amount||/^(?:Fill|On Top|(?:\d+\s+)?\d+(?:\/\d+|\.\d+)?\s*(?:oz|tsp|dash|ea|part|pinch))$/i.test(text.trim()));}
+    function apply(path){const s=slots.get(path);if(!s)return;s.obj[s.field]=s.original;if(Object.hasOwn(values,path)&&valid(path,values[path]))s.obj[s.field]=s.html?escapeText(values[path]).replace(/\n/g,'<br>'):values[path];}
+    function persist(){try{if(typeof localStorage==='undefined')throw Error();localStorage.setItem(key,JSON.stringify({version:1,values}));error='';return true;}catch{error='자동 저장 실패 · 이 화면의 수정 내용을 백업해 주세요.';return false;}}
+    for(const c of cocktails){
+      for(const k of ['name','en','tip'])add('r.'+c.id+'.'+k,c,k);
+      add('r.'+c.id+'.method',c,'method',{options:[...new Set(cocktails.map(x=>x.method))]});
+      add('r.'+c.id+'.glass',c,'glass',{options:Object.keys(glasses)});
+      add('r.'+c.id+'.garnish',c,'garnish',{options:Object.keys(garnishes)});
+      c.ingredients.forEach((i,n)=>{add('r.'+c.id+'.ingredients.'+n+'.amount',i,'amount',{amount:true});add('r.'+c.id+'.ingredients.'+n+'.id',i,'id',{options:Object.keys(ingredients)});});
+    }
+    function walk(obj,path){for(const [k,v] of Object.entries(obj)){if(['id','origin','ingredient','source','page'].includes(k))continue;if(typeof v==='string')add(path+'.'+k,obj,k,{html:['body','title'].includes(k)&&!path.includes('.tips.')});else if(v&&typeof v==='object')walk(v,path+'.'+k);}}
+    return {key,get error(){return error;},bindLessons(L){if(bound)return;bound=true;for(const c of cocktails)if(L[c.id]?.canonical)walk(L[c.id].canonical,'l.'+c.id);walk(L.catalogGuide.groups,'g');},has:path=>slots.has(path),changed:path=>Object.hasOwn(values,path),
+      set(path,text){if(!valid(path,text))return {ok:false,invalid:true,message:'용량은 1/2 oz, 1 tsp, Fill처럼 단위와 함께 입력하세요.'};values[path]=text;apply(path);return {ok:persist(),message:error||'자동 저장됨 · 이 브라우저'};},
+      export(){return {format:'joju-content-edits',version:1,savedAt:new Date().toISOString(),values:{...values}};},
+      import(input){if(input?.format!=='joju-content-edits'||input.version!==1||!input.values||typeof input.values!=='object'||Array.isArray(input.values)||Object.keys(input.values).length>10000)throw Error('조주 연습장의 수정 백업 파일이 아닙니다.');for(const [p,t] of Object.entries(input.values))if(!valid(p,t))throw Error('읽을 수 없는 수정 항목이 있습니다: '+p);values={...values,...input.values};for(const p of slots.keys())apply(p);return persist();},
+      reset(scope,visible=[]){for(const p of Object.keys(values))if(visible.includes(p)||scope==='all'||p.startsWith('r.'+scope+'.')||p.startsWith('l.'+scope+'.')||(scope==='common'&&p.startsWith('g.')))delete values[p];for(const p of slots.keys())apply(p);return persist();}
+    };
+  })();
+
   root.JojuData=data;
   if(typeof module!=='undefined')module.exports=data;
 })(globalThis);

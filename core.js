@@ -26,7 +26,7 @@
      const amt=x.verified?x.amount:'용량 원문 확인 필요';
      const measure=['Fill','On Top'].includes(amt)||!x.verified?'':(' '+amt);
      const instruction=['Fill','On Top'].includes(amt)?' ('+amt+')':'';
-     const name=D.ingredients[x.id][0],last=name.charCodeAt(name.length-1),particle=!measure&&last>=0xAC00&&last<=0xD7A3&&(last-0xAC00)%28?'을':'를';
+     const name=D.ingredients[x.id][0],last=name.charCodeAt(name.length-1),particle=measure?(/tsp$/.test(amt)?'을':'를'):(last>=0xAC00&&last<=0xD7A3&&(last-0xAC00)%28?'을':'를');
      add(name+measure+particle+' '+dest+'에 '+ending+instruction+'.'+(!x.verified?' 용량은 원문 확인이 필요하다.':''),[keywords(x.id),['넣','붓','부어','부은','계량','채우','채운','올리','올린','띄우','쌓']],{ingredient:x.id,phase:'measure'});
    };
    if(c.method==='Float'){
@@ -62,7 +62,7 @@
        add(pour+' 준비한 '+D.glasses[c.glass][0]+'에 따른다.',[[blended?'함께':'걸러',blended?'통째':'스트레인',blended?'붓':'거른'],['잔','글라스','glass'],['따른','붓','담']],{phase:'pour'});
      }
      for(const x of late){
-       const end=x.finish==='float'?'천천히 부어 층을 만들고 젓지 않는다':x.finish==='top'||x.amount==='On Top'?'마지막에 올린다':x.amount==='Fill'?'채운다':'붓고 가볍게 젓는다';
+       const end=x.finish==='float'?'뒤집은 바 스푼을 대고 부어 그라데이션을 만들며, 이후 젓지 않는다':x.finish==='top'||x.amount==='On Top'?'마지막에 올린다':x.amount==='Fill'?'채운다':'붓고 가볍게 젓는다';
        ingredientStep(x,'내용물이 담긴 잔',end);
      }
      if(!shaken&&!stirred&&!blended&&c.method!=='Build/Float')add('잔 안의 내용물을 바 스푼으로 가볍게 저어 섞는다.',[['잔','내용물'],['저어','젓','섞']],{phase:'mix'});
@@ -86,12 +86,12 @@
  function fields(c){
    const list=[];
    for(const [i,x] of c.ingredients.entries()){
-     list.push({key:'name-'+i,label:(i+1)+'번 재료',answer:D.ingredients[x.id][0],bank:Object.entries(D.ingredients).filter(([id])=>x.id!=='orangeLiqueur'||id!=='tripleSec').map(([,v])=>v[0]),section:'재료'});
+     list.push({key:'name-'+i,label:(i+1)+'번 재료',answer:D.ingredients[x.id][0],bank:Object.entries(D.ingredients).filter(([id])=>!(x.id==='orangeLiqueur'&&id==='tripleSec')&&!(x.id==='tripleSec'&&id==='orangeLiqueur')).map(([,v])=>v[0]),section:'재료'});
      if(x.verified)list.push({key:'amount-'+i,label:(i+1)+'번 용량',answer:x.amount,bank:amountOptions(x.amount),section:'용량'});
    }
    list.push({key:'method',label:'조주법',answer:c.method,bank:[...new Set(D.cocktails.map(v=>v.method))],section:'기법'});
    list.push({key:'ice',label:'얼음 처리 · 학습 예시',answer:ice(c),bank:['완성 잔에 얼음 없음',c.method==='Blend'?ice(c):'분쇄 얼음과 블렌딩','혼합용 얼음을 걸러 제출','완성 잔에 큐브 얼음'],section:'얼음'});
-   list.push({key:'garnish',label:'가니시',answer:D.garnishes[c.garnish],bank:Object.values(D.garnishes),section:'가니시'});
+   list.push({key:'garnish',label:'가니시',answer:D.garnishes[c.garnish],bank:D.garnishOptions(c.garnish).map(id=>D.garnishes[id]),section:'가니시'});
    return list;
  }
  function gradeFields(c,answers){return fields(c).map(f=>({key:f.key,label:f.label,expected:f.answer,actual:answers[f.key]||'미선택',ok:answers[f.key]===f.answer}));}

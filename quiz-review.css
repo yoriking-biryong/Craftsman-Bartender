@@ -1,0 +1,342 @@
+/* Compact recipe corrections, shared by all quiz explanations. */
+.qr-review{margin-top:12px;color:#493f31;font:400 16.667px/1.65 Pretendard,system-ui,sans-serif;overflow-wrap:anywhere}
+.qr-review h4:not(:where(.recipe-notes h4,.qr-web-mnemonics h4)){margin:0 0 8px;font-size:17.667px;font-weight:750;color:#493f31}
+.qr-review p:not(:where(.recipe-notes p,.qr-web-mnemonics p,.qr-memory p)){margin:6px 0;color:inherit}.qr-review h5:not(:where(.recipe-notes h5)){margin:0;font-size:17.667px}
+.qr-answer{color:#70415f}.qr-answer>b{font-size:15.667px}.qr-answer>p{font-size:19.667px;font-weight:750;margin-top:3px}
+.qr-correction{padding:8px 0;margin:8px 0 12px;border-top:1px solid #d9cdb5;border-bottom:1px solid #d9cdb5}
+.qr-review .qr-legend,.qr-review .qr-caption{font-size:14.667px;line-height:1.6;color:#71685b;font-weight:400}
+.qr-review .qr-corrected-sentence,.qr-filled,.qr-corrected-order,.qr-writing{font-size:17.667px;line-height:2}
+.qr-filled,.qr-corrected-order{padding-left:24px;margin:8px 0}.qr-filled>li,.qr-corrected-order>li{padding:3px 0}
+.qr-review del,.qr-review .qr-del{color:#ad2631;text-decoration:line-through;text-decoration-thickness:2px;background:#fff0ed;padding:1px 3px}
+.qr-review ins,.qr-review .qr-ins{color:#176352;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px;background:#e9f4ec;font-weight:750;padding:1px 3px}
+.qr-corrected-order{list-style:none;counter-reset:review-step}.qr-corrected-order>li:not(.qr-order-del){counter-increment:review-step}.qr-corrected-order>li::before{content:counter(review-step) '. ';margin-left:-20px;display:inline-block;min-width:20px}.qr-corrected-order>.qr-order-del::before{content:'× '}.qr-order-del{opacity:.9}
+.qr-field-label{font-weight:650}.qr-explanation{font-size:16.667px}
+.qr-recipes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:var(--note-card-gap)}
+.qr-recipe{padding:var(--note-box-padding);background:#f2f0e6;border-left:3px solid #648477;margin:8px 0;color:#244d49;font-size:19.667px;font-weight:750;min-width:0}
+.qr-recipe h4{font-size:20.667px;color:#244d49}.qr-recipe h4 small{font-size:13.667px;display:inline-block;color:#62756a;font-weight:600;margin-left:5px}
+.qr-ingredients{list-style:none;padding:0;margin:8px 0!important;display:grid;gap:5px}.qr-ingredients li{margin:0!important;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.qr-meta{display:grid;gap:5px;font-size:17.667px;margin:8px 0 0}.qr-meta>div{display:flex;gap:10px}.qr-meta dt{font-size:14.667px;color:#6a766c;flex:0 0 36px;padding-top:3px;font-weight:500}.qr-meta dd{margin:0;min-width:0}
+.qr-hit{background:transparent;color:#653873;font-weight:650;text-decoration:none;padding:0}
+.qr-hit small{font-size:11.667px;vertical-align:middle;font-weight:600;margin-left:5px;white-space:nowrap;text-decoration:none}
+.qr-finish{font-size:13.667px;font-weight:500;color:#786d57}.qr-qty{font-weight:800;white-space:nowrap;color:#4e5079}
+.qr-qty-0{color:#12625c}.qr-qty-1{color:#844516}.qr-qty-2{color:#713c87}.qr-qty-3{color:#365d8b}.qr-qty-4{color:#a0325c}.qr-qty-5{color:#6a5920}.qr-qty-6{color:#554d97}.qr-qty-7{color:#35713b}.qr-qty-8{color:#944733}.qr-qty-9{color:#3f5b63}.qr-qty-10{color:#8f3b35}.qr-qty-11{color:#735629}.qr-qty-12{color:#425f85}.qr-qty-13{color:#6a5266}.qr-qty-14{color:#5b6229}.qr-qty-15{color:#4f625a}
+.qr-study{margin-top:12px;padding-top:10px;border-top:1px solid #d9cdb5}.qr-review .qr-chant{font-weight:750;font-size:19.667px;color:#81452a}
+.qr-memory p{margin:0}.qr-memory p+p{margin-top:var(--note-paragraph-gap)}.qr-memory .note-aside{font-family:'KNPS Kkomi',Pretendard,sans-serif;font-size:var(--note-aside-size);color:#86613d;line-height:1.45}
+.qr-class-tip{background:#f1eadb;padding:var(--note-box-padding)}.qr-nearby{margin-top:12px}.qr-nearby-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--note-card-gap)}
+.qr-nearby-grid article{min-width:0;padding-top:9px;border-top:1px solid #dfd5c1}.qr-nearby p{font-size:15.667px;line-height:1.7}.qr-compare b{font-size:13.667px;margin-right:5px;color:#76643e}
+.qr-class-notes{margin:8px 0;padding:0;border:1px solid #ddd4c4;border-radius:6px;background:#fffdf7}.qr-class-notes>summary{cursor:pointer;font-size:15.667px;font-weight:650;color:#805137;margin:0;padding:var(--note-box-padding);line-height:1.6}.qr-class-notes[open]>summary{border-bottom:1px solid #e3dacb}.qr-class-notes .recipe-notes{margin:0}
+.qr-writing{white-space:pre-wrap}.qr-review .qr-recipe .qr-caption{font-size:14.667px}
+/* Source-backed additions share one renderer across the notebook and quiz reviews. */
+.qr-web-mnemonics{margin:12px 0;padding:10px 0 0;border-top:1px solid #d9cdb5;min-width:0;overflow-wrap:anywhere;color:#493f31;font:400 16.667px/1.65 Pretendard,system-ui,sans-serif;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--note-card-gap)}
+.memory-recipe>.qr-web-mnemonics,.qr-study>.qr-web-mnemonics{margin:12px 15px}
+.qr-web-mnemonics h4{grid-column:1/-1;margin:0 0 2px;font-size:17.667px;color:#73495e}
+.qr-web-mnemonics>article{min-width:0;border:1px solid #dedbc9;border-left:3px solid #8a8d60;border-radius:6px;background:#f5f4eb}
+.qr-web-mnemonics>article:has(.qr-web-chant){border-color:#e1d4db;border-left-color:#936d82;background:#f7f0f3}
+.qr-web-mnemonics .qr-web-chant{margin:0 0 5px;color:#805137;font:400 var(--note-aside-size)/1.5 'KNPS Kkomi',system-ui,sans-serif}
+.qr-web-mnemonics .qr-web-body{margin:5px 0 0;font-size:16.667px;line-height:1.65}
+.qr-source-content{color:inherit;text-decoration:none}
+.qr-web-mnemonics .qr-source-content{display:block;padding:var(--note-box-padding);border-radius:4px;height:100%;box-sizing:border-box}
+.qr-source-content:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.qr-source-content:focus-visible{outline:2px solid #807043;outline-offset:4px;border-radius:2px}
+.qr-web-mnemonics .qr-web-tip-title{margin:0 0 5px;color:#6c7045;font-size:16.667px;font-weight:700}
+.qr-web-common{margin:16px 0;padding:12px 0;border-top:1px solid #d9cdb5}
+.qr-web-common>summary{cursor:pointer;font-size:16.667px;font-weight:650;color:#6c7045}
+.qr-web-common>.qr-web-mnemonics{border:0;margin:14px 0 0;padding:0}
+@media(max-width:700px){.qr-web-mnemonics{grid-template-columns:1fr;gap:var(--note-card-gap)}.qr-web-mnemonics .qr-source-content{padding:var(--note-box-padding)}}
+@media(max-width:600px){.qr-nearby-grid{grid-template-columns:1fr;gap:var(--note-card-gap)}.qr-recipe{padding:var(--note-box-padding);font-size:18.667px}.qr-recipe h4{font-size:19.667px}.qr-answer>p{font-size:18.667px}.qr-hit small{font-size:10.667px}.qr-meta{font-size:16.667px}.qr-review{font-size:15.667px}}
+
+/* Compact ingredient names and amounts; keep recipe emphasis and quantity colours. */
+.qr-ingredients{font-size:17.667px}
+@media(max-width:600px){.qr-ingredients{font-size:16.667px}}
+
+/* A single compact lesson layout is shared by the catalog, sequence quiz and feedback. */
+.lesson-summary{font:400 16.667px/1.65 Pretendard,system-ui,sans-serif;color:#493f31;min-width:0;overflow-wrap:anywhere}
+.lesson-facts .notice{margin:8px 0;padding:8px 10px}.lesson-facts .summary-grid{margin:10px 0;gap:8px}.lesson-facts .summary-grid>div{padding:9px 11px;border-radius:6px}.lesson-facts .summary-grid span{display:block;margin-top:4px;font-size:14.667px}.lesson-facts .summary-grid strong{font-size:17.667px}
+.lesson-facts .ingredient-table th,.lesson-facts .ingredient-table td{padding-top:7px;padding-bottom:7px}.lesson-facts .ingredient-table td small{display:block;white-space:normal}
+.lesson-flow{margin:12px 0}.lesson-flow>h4{font-size:17.667px;margin:0 0 8px;color:#73495e}.lesson-summary .recipe-steps{display:grid;grid-template-columns:1fr;list-style:none;counter-reset:lesson;gap:6px;padding:0;margin:0}
+.lesson-summary .recipe-steps>li{counter-increment:lesson;position:relative;margin:0;padding:8px 10px 8px 34px;border:1px solid #ddd3c0;border-radius:6px;background:#faf8f1;font-size:16.667px;line-height:1.6}
+.lesson-summary .recipe-steps>li::before{content:counter(lesson);position:absolute;left:11px;top:8px;color:#727748;font-size:13px;font-weight:700}.lesson-summary .recipe-steps strong{font-size:16.667px}.lesson-summary .recipe-steps p{margin:4px 0}
+.lesson-memory{margin:8px 0;padding:8px 10px;background:#eef0e5;border-left:3px solid #858868;border-radius:4px}.lesson-summary .qr-chant{font:400 var(--note-aside-size,16px)/1.5 'KNPS Kkomi',sans-serif;margin:0 0 4px;color:#805137}.lesson-summary .qr-memory{font-size:15.667px}
+.lesson-class-notes .recipe-notes{margin:0;padding:0;border:0}.lesson-class-notes .note-detail-body{padding:0}.lesson-class-notes .note-columns{gap:6px}.lesson-class-notes .note-columns>*,.lesson-class-notes .note-class-sheet,.lesson-class-notes .merged-class-notes{padding:8px 10px;margin:6px 0;border:1px solid #ded4c3;border-radius:6px;background:#fffdf7}
+.lesson-class-notes :is(p,blockquote){margin-top:5px;margin-bottom:5px}.lesson-class-notes .note-aside,.lesson-class-notes .note-transcript{font-size:var(--note-aside-size,16px);line-height:1.5}.lesson-summary .qr-web-mnemonics{margin:10px 0;padding-top:10px}.lesson-summary .qr-web-mnemonics .qr-web-body{font-size:15.667px}
+.lesson-catalog-panel{margin:10px 8px;border:1px solid #d4c7b1;border-radius:6px;background:#fffdf8}.lesson-catalog-panel>summary{padding:8px 10px;cursor:pointer;font-weight:650;color:#70415f;font-size:16.667px}.lesson-catalog-panel[open]>summary{border-bottom:1px solid #d4c7b1}.lesson-catalog-panel>.lesson-summary{padding:10px}.lesson-catalog-panel .catalog-textbook{margin:8px 10px}
+.qr-source-content:hover{text-decoration:none}.lesson-summary .qr-web-mnemonics .qr-source-content{height:auto}.qr-review .lesson-summary h4{font-size:17.667px}.qr-review .lesson-summary .recipe-steps p{margin:4px 0}
+.study-photo{display:block;object-fit:contain}.ingredient-tile .study-photo{width:73px;height:85px;margin-bottom:4px}.ingredient-tile.used .study-photo{filter:grayscale(.7);opacity:.6}.glass-choice .study-photo{object-fit:contain}
+@media(max-width:600px){.lesson-summary{font-size:15.667px}.lesson-summary .recipe-steps>li,.lesson-summary .recipe-steps strong{font-size:15.667px}.lesson-facts .summary-grid{gap:6px}.lesson-facts .summary-grid strong{font-size:16px}.lesson-catalog-panel>.lesson-summary{padding:8px}}
+
+.lesson-class-notes .mn-layout{display:block}.lesson-class-notes .mn-memos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.lesson-class-notes .mn-memos>section{margin:0;padding:8px 10px;border:1px solid #ded4c3;border-radius:6px;background:#fffdf7}.lesson-class-notes .mn-practice{padding:0;border:0;background:none}.lesson-class-notes .mn-practice>h5{display:none}.lesson-class-notes .note-detail-body>h5{margin:6px 0}.lesson-class-notes .merged-class-notes{display:block}.lesson-summary .note-basics{display:none}
+@media(max-width:700px){.lesson-class-notes .mn-memos{grid-template-columns:1fr}}
+
+/* One open recipe, one vertical rhythm. No equal-height filler inside cards. */
+.catalog-detail{max-width:980px;width:100%;margin-inline:auto}
+.catalog-detail>.lesson-summary{padding:0 18px 18px}
+.catalog-detail .memory-recipe-head,.memory-grid:has(>.catalog-detail:only-child) .memory-recipe-head{padding:14px 18px}
+.catalog-detail .memory-recipe-body,.memory-grid:has(>.catalog-detail:only-child) .memory-recipe-body{padding:0 18px 12px;display:block}
+.catalog-preview .memory-recipe-body{padding:8px 16px}
+.catalog-open{display:block;padding:10px 16px;color:#70415f;font-weight:650}
+.cocktail-meaning{display:inline-block;font:400 15px/1.5 'KNPS Kkomi',sans-serif;color:#815c3c;margin-left:10px;vertical-align:middle}
+.lesson-introduction{margin:8px 0}
+.lesson-taste{font:400 var(--note-aside-size,16px)/1.5 'KNPS Kkomi',sans-serif;color:#835b3d;margin:4px 0}
+.lesson-annotation{font:400 var(--note-aside-size,16px)/1.5 'KNPS Kkomi',sans-serif;color:#815c3c;margin:4px 0}
+.ingredient-annotations td{padding:7px 10px!important;background:#f5f2e8;font-weight:400!important;white-space:normal!important;text-align:left!important}
+.ingredient-annotations .lesson-annotation:first-child{margin-top:0}
+.ingredient-annotations .lesson-annotation:last-child{margin-bottom:0}
+.lesson-summary .recipe-steps>li{padding:9px 12px 9px 34px}
+.lesson-summary .recipe-steps>li>strong{display:block;line-height:1.55;margin:0}
+.lesson-summary .recipe-steps>li>p{margin:4px 0 0}
+.lesson-summary .recipe-steps>li>:last-child{margin-bottom:0}
+.lesson-mnemonic{padding:7px 9px;margin:7px 0 0;border-left:2px solid #936d82;background:#f5eef2;border-radius:4px}
+.lesson-mnemonic p{font-size:15px;line-height:1.55;margin:0!important}
+.lesson-mnemonic p+p{margin-top:4px!important}
+.ingredient-concept{margin:12px 0 0;padding:0;border-top:1px solid #d9cdb5}
+.concept-part{padding:10px 0;border-bottom:1px solid #dfd6c7;min-width:0}
+.concept-part>h3,.concept-part>h5{margin:0 0 6px;font-size:16px;line-height:1.5;color:#626b44}
+.concept-part p{margin:5px 0;font-size:15.667px;line-height:1.6}
+.concept-part .lesson-annotation{font-size:var(--note-aside-size,16px);line-height:1.5}
+.concept-part>:first-child{margin-top:0}.concept-part>:last-child{margin-bottom:0}
+.concept-link{display:inline-block;margin:7px 12px 0 0;font-size:14px;color:#70415f}
+.catalog-breadcrumb{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:10px 0;margin-bottom:12px;color:#70415f;font-size:15px}
+.catalog-breadcrumb a{color:inherit}.catalog-review-link{display:inline-block;color:#70415f;font-weight:650;padding:6px 0}
+.sequence-catalog h2{font-size:23px;margin:0 0 14px}
+.sequence-menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.sequence-menu-grid>a{display:grid;grid-template-columns:24px 1fr;gap:4px 9px;padding:12px;border:1px solid #d9cdb5;border-radius:6px;text-decoration:none;background:#fffdf7;color:#493f31}
+.sequence-menu-grid>a:hover{background:#efefdf;border-color:#7b8059}.sequence-menu-grid span{grid-row:span 2;color:#777c53;font-size:13px}.sequence-menu-grid b{font-size:16px}.sequence-menu-grid small{font-size:13px;color:#7d7160}
+.memory-page .catalog-common{margin:12px 0;padding:0;border-block:1px solid #d9cdb5;border-radius:0}
+.memory-page .catalog-common>summary{padding:10px 0;margin:0;line-height:1.5;min-height:0;font-size:16px;font-weight:650}
+.memory-page .catalog-common[open]>summary{border-bottom:1px solid #d9cdb5}
+.memory-page .catalog-common>.catalog-guide{padding:12px 0;margin:0}
+.catalog-guide :is(.common-prep,.memory-common-guide,.memory-mnemonics-guide){padding:0;margin:0 0 10px;border:0;background:none}
+.catalog-guide :is(h2,h3,h4,h5){line-height:1.5;margin:0 0 6px}
+.catalog-guide :is(p,blockquote){margin:5px 0}
+.catalog-guide :is(section,article)>:first-child{margin-top:0}.catalog-guide :is(section,article)>:last-child{margin-bottom:0}
+.catalog-guide .guide-concepts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;align-items:start}
+.catalog-guide .guide-concepts .concept-part{height:auto}
+.catalog-guide .qr-web-common{padding:10px 0;margin:10px 0}
+.catalog-guide .qr-web-common>h3{margin:0 0 6px;font-size:16px}
+/* All remaining note disclosures use equal padding, including quiz help. */
+:is(.memory-page,.qr-review,.study-main) details:has(>summary){padding-block:0}
+:is(.memory-page,.qr-review,.study-main) details>summary{padding-block:10px;margin-block:0;line-height:1.5;min-height:0}
+:is(.memory-page,.qr-review,.study-main) details>summary :is(p,h3,h4,h5,strong){margin-block:0;line-height:inherit}
+@media(max-width:700px){.sequence-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.catalog-guide .guide-concepts{grid-template-columns:1fr}.catalog-detail>.lesson-summary{padding:0 12px 12px}.memory-grid:has(>.catalog-detail:only-child) .memory-recipe-body{padding:0 12px 10px}.cocktail-meaning{display:block;margin:3px 0 0;font-size:14px}.catalog-detail .ingredient-table th{white-space:normal}.concept-part p{font-size:15px}}
+@media(max-width:400px){.sequence-menu-grid{grid-template-columns:1fr}}
+.stepper-reference{display:flex;align-items:center;justify-content:center;padding:10px;color:#70415f;text-decoration:none;border:1px solid #d9cdb5;border-radius:5px;font-size:15px}
+.memory-heading .eyebrow,.memory-heading>div>p{display:none}
+.catalog-detail .bottle-strip{border-top:0;padding:8px 0;margin:6px 0}
+.catalog-detail .bottle-four-lines{gap:4px}
+.guide-preparation{display:grid;grid-template-columns:1fr;gap:0}
+.catalog-guide table{width:100%;border-collapse:collapse;font-size:15px;table-layout:fixed}
+.catalog-guide td,.catalog-guide th{padding:7px 9px;text-align:left;border-bottom:1px solid #ddd3c0;overflow-wrap:anywhere}
+.catalog-guide .concept-part{overflow-wrap:anywhere}
+/* Common reference categories and in-context class annotations share compact cards. */
+.catalog-guide-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 10px;margin:12px 0 16px;align-items:start}
+.memory-page .guide-category{margin:0;padding:0;border:1px solid #d8cfbc;border-radius:7px;background:#fffdf7;min-width:0;overflow:hidden}
+.memory-page .guide-category>summary{padding:10px 12px;margin:0;line-height:1.5;font-size:16px;font-weight:650;color:#596345;background:#f0f0e5;cursor:pointer}
+.memory-page .guide-category:nth-child(even)>summary{background:#f4edf1;color:#73495e}
+.memory-page .guide-category[open]{grid-column:1/-1}
+.memory-page .guide-category[open]>summary{border-bottom:1px solid #d8cfbc}
+.guide-card-grid,.lesson-note-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:start}
+.guide-card-grid{padding:10px}
+.guide-card-grid>.lesson-note-card:has(table){grid-column:1/-1}
+.lesson-note-card{min-width:0;padding:9px 11px;margin:0;border:1px solid #ded5c3;border-radius:6px;background:#faf8f0;overflow-wrap:anywhere}
+.lesson-note-card:nth-child(even){background:#f6f0f3;border-color:#e0d1db}
+.lesson-note-card>h5{margin:0 0 5px;font:650 15.667px/1.5 Pretendard,system-ui,sans-serif;color:#606a45}
+.lesson-note-card :is(p,blockquote){margin:5px 0;font-size:15px;line-height:1.6}
+.lesson-note-card :is(.lesson-annotation,.note-aside,.note-transcript){font:400 var(--note-aside-size,16px)/1.5 'KNPS Kkomi',sans-serif;color:#815c3c}
+.lesson-note-card>:first-child{margin-top:0}.lesson-note-card>:last-child{margin-bottom:0}
+.lesson-note-card :is(table,dl){margin-block:6px}.lesson-note-card table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:14px}
+.lesson-note-card :is(th,td){padding:6px 7px;vertical-align:top;text-align:left;border-bottom:1px solid #ddd3c0;overflow-wrap:anywhere}
+.lesson-note-card :is(ul,ol){margin:5px 0;padding-left:20px}
+.lesson-extra-cards{margin:12px 0}.ingredient-concept.lesson-note-grid{border:0;padding:0;margin-top:8px}
+.step-annotations{margin-top:6px;padding:6px 9px;border-left:2px solid #9da076;background:#f1f2e8;border-radius:3px}
+.step-annotations .lesson-annotation{margin:4px 0}.step-annotations>:first-child{margin-top:0!important}.step-annotations>:last-child{margin-bottom:0!important}
+.lesson-summary .lesson-note-card .qr-qty{white-space:normal}
+@media(max-width:700px){.catalog-guide-groups,.guide-card-grid,.lesson-note-grid{grid-template-columns:1fr}.guide-card-grid{padding:8px}.memory-page .guide-category[open]{grid-column:auto}.lesson-note-card{padding:8px 10px}}
+.catalog-guide .pdf-terms{margin:0;display:grid;gap:6px}.catalog-guide .pdf-terms>div{display:grid;grid-template-columns:minmax(90px,1fr) 3fr;gap:9px}.catalog-guide .pdf-terms dd{margin:0}
+@media(max-width:580px){.catalog-detail .bottle-row{gap:10px}.catalog-detail .bottle-row>.bottle-tile{flex:0 1 calc((100% - 10px)/2);width:calc((100% - 10px)/2);min-width:0;padding:6px}.catalog-detail .bottle-row>.bottle-tile:only-child{flex-basis:210px}.catalog-guide .pdf-terms>div{grid-template-columns:1fr}.catalog-guide td,.catalog-guide th{padding:6px;font-size:14px}}
+
+/* The catalog uses the original sequence lesson's title, paper panel and photo aside. */
+.memory-grid:has(>.catalog-lesson){display:block;max-width:none;margin:0}
+.catalog-lesson{min-width:0}
+.catalog-lesson .study-title{margin:0 0 18px}
+.catalog-lesson .study-title h2{font-size:32.667px;font-weight:650;line-height:1.4;margin:0}
+.catalog-lesson .study-layout{grid-template-areas:"body portrait";align-items:start}
+.catalog-main{grid-area:body;padding:20px}
+.catalog-portrait{grid-area:portrait}
+.catalog-main>.lesson-introduction{margin:0 0 12px}
+.catalog-main>.lesson-introduction>:first-child{margin-top:0}
+.catalog-main .lesson-summary{padding:0;margin:0}
+.catalog-main .lesson-flow{margin:14px 0}
+.catalog-main .bottle-strip{border:0;margin:12px 0;padding:0}
+.catalog-main .bottle-four-lines{gap:4px}
+.catalog-main .memory-recipe-foot{margin:14px 0 0;padding:12px 0 0;gap:10px}
+.catalog-portrait>.cocktail-photo{height:220px;margin:0 0 14px;background:transparent;border:0}
+.catalog-portrait .meta-list>div:first-child{padding-top:0}
+.catalog-portrait .meta-list>div:last-child{border:0;padding-bottom:0}
+.memory-overview .catalog-preview .memory-recipe-head{background:transparent;border-bottom:0;padding:16px 16px 8px}
+.memory-overview .catalog-preview .memory-recipe-head>div{border-left:3px solid #b87350;padding-left:12px}
+.memory-overview .catalog-preview .memory-recipe-body{padding-top:8px}
+.sequence-catalog h2{margin-bottom:6px}
+.sequence-order{font-size:14px;color:#7d7160;margin:0 0 14px}
+@media(max-width:800px){
+ .catalog-lesson .study-layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"portrait" "body";gap:14px}
+ .catalog-portrait{display:grid;grid-template-columns:120px minmax(0,1fr);align-items:center;gap:16px;padding:16px}
+ .catalog-portrait>.cocktail-photo{height:160px;width:120px;margin:0}
+ .catalog-portrait .meta-list{display:grid;grid-template-columns:1fr;gap:0}
+ .catalog-portrait .meta-list>div{padding:7px 0}
+}
+@media(max-width:580px){
+ .catalog-lesson .study-title h2{font-size:28.667px}
+ .catalog-main{padding:12px}
+ .catalog-main .bottle-row{gap:10px}
+ .catalog-main .bottle-row>.bottle-tile{flex:0 1 calc((100% - 10px)/2);width:calc((100% - 10px)/2);min-width:0;padding:6px}
+ .catalog-main .bottle-row>.bottle-tile:only-child{flex-basis:210px}
+ .catalog-portrait{padding:12px;gap:12px}
+ .catalog-main .ingredient-table th{white-space:normal}
+}
+.qr-qty{font-family:inherit;font-size:inherit;font-weight:700;color:#62614f}
+.qr-qty .qty-number{font:inherit;color:#62614f}
+.qr-qty .qty-1-2{color:#926017}.qr-qty .qty-1-4{color:#94516e}.qr-qty .qty-3-4{color:#546b47}.qr-qty .qty-1-3{color:#555990}.qr-qty .qty-1-8{color:#91613b}
+.lesson-note-card :is(li,dt,dd,td,th){font-size:15px;line-height:1.6}
+.lesson-note-card :is(li,dt,dd) :is(b,strong){font-size:inherit}
+.lesson-note-card dl{display:grid;grid-template-columns:minmax(85px,1fr) minmax(0,3fr);gap:5px 10px}
+.lesson-note-card dl>div{display:contents}.lesson-note-card dd{margin:0}.lesson-note-card dt{margin:0;font-weight:650}
+.lesson-note-card li{margin-block:3px}
+.lesson-note-card div>:first-child{margin-top:0}.lesson-note-card div>:last-child{margin-bottom:0}
+.recipe-adjacent{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 12px;font-size:14px}
+.recipe-adjacent a,.recipe-adjacent>[aria-disabled]{display:flex;align-items:center;gap:6px;min-height:40px;padding:5px 10px;border:1px solid #d6cab4;border-radius:5px;text-decoration:none;color:#615340}
+.recipe-adjacent a:hover{background:#eee8da}.recipe-adjacent>[aria-disabled]{opacity:.35}.recipe-adjacent span{overflow-wrap:anywhere}
+.catalog-editor-tools{display:flex;flex-wrap:wrap;align-items:center;gap:6px 9px;margin:0 0 12px;font-size:13px}
+.catalog-editor-tools button,.catalog-editor-tools .editor-import{padding:5px 10px;min-height:33px;font-size:13px;line-height:1.5}
+.editor-status{flex:1 1 200px;color:#686b53;font-size:12px}.editor-import{display:inline-flex;align-items:center;border:1px solid #d6cab4;border-radius:5px;cursor:pointer;position:relative}.editor-import input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}.editor-import:focus-within{outline:2px solid #81536f;outline-offset:2px}
+.editing-catalog [contenteditable=true]{outline:1px dashed #bfb18f;outline-offset:3px;border-radius:2px;min-height:1.5em;white-space:pre-wrap;cursor:text}
+.editing-catalog [contenteditable=true]:focus{outline:2px solid #875c78;background:#fffaf0}
+.editing-catalog [contenteditable=true].edit-invalid{outline-color:#ad4930}
+.editing-catalog select{max-width:100%;padding:5px 7px;min-height:32px;font-size:14px}
+.editing-catalog .ingredient-table td [contenteditable]{display:inline-block;min-width:80px}
+.lesson-personal[data-empty=true]{display:none}.editing-catalog .lesson-personal{display:block;margin-top:10px;padding:9px;border:1px solid #d5c4cf;border-radius:5px}.lesson-personal p{margin:0;min-height:1.5em}
+.editing-catalog [data-placeholder]:empty:before{content:attr(data-placeholder);color:#998a72;pointer-events:none}
+@media(max-width:600px){.recipe-adjacent{gap:6px}.recipe-adjacent a{max-width:48%;font-size:13px}.catalog-editor-tools{gap:6px}.editor-status{order:2;flex-basis:100%}.lesson-note-card dl{grid-template-columns:minmax(72px,1fr) minmax(0,2.5fr)}.editing-catalog .ingredient-table th{width:60%}}
+.study-title>.recipe-adjacent{float:right;width:min(48%,450px);margin:0 0 8px 14px}
+.study-title:after{content:"";display:block;clear:both}
+@media(max-width:600px){.study-title>.recipe-adjacent{float:none;width:100%;margin:0 0 8px}}
+.catalog-guide,.lesson-summary,.lesson-introduction,.qr-review{--note-aside-size:16px}
+
+/* Catalog browsing, ingredient photographs and picture recognition share the page rhythm. */
+.ingredient-table th>small{display:inline;font-size:13px;margin:0 0 0 10px;color:#847563;font-weight:400;line-height:1.6}
+.ingredient-table th{white-space:normal}
+.recipe-facet{display:inline-block;color:inherit;text-decoration:underline;text-decoration-color:#b6b59c;text-underline-offset:4px;padding:2px 0;border-radius:3px}
+.recipe-facet:hover,.recipe-facet:focus-visible{color:#79526b;background:#f3eaf0}
+.catalog-facet-bar{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;padding:12px 16px;background:#eceedd;border:1px solid #c6ccb2;border-radius:6px;margin:12px 0;font-size:14px}
+.catalog-facet-bar a{margin-left:auto;color:#7d4d66}
+.recipe-index .catalog-search{margin:14px 0}.recipe-index .sequence-menu-grid{margin-top:16px}
+.bottle-strip>.bottle-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px;width:100%;justify-content:stretch}
+.bottle-strip>.bottle-row>.bottle-tile{display:grid;grid-template-columns:minmax(82px,40%) minmax(0,1fr);align-items:center;gap:12px;text-align:left;width:100%;max-width:none;min-width:0;padding:10px 14px;min-height:200px}
+.bottle-strip>.bottle-row>.bottle-tile>.bottle-photo{width:100%;height:190px;margin:0;object-fit:contain}
+.bottle-strip>.bottle-row>.bottle-tile .bottle-four-lines{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;width:100%;max-width:none;margin:0;justify-items:start;text-align:left;font-size:14px}
+.bottle-strip>.bottle-row>.bottle-tile .bottle-field-label{width:auto;margin:5px 0 0;padding:0 5px}
+.bottle-strip>.bottle-row>.bottle-tile .bottle-four-lines>b{font-size:15px;line-height:1.5}
+.bottle-strip>.bottle-row>.bottle-tile:hover{background:#f2ecdf}
+.photo-name-quiz{max-width:1050px;margin:0 auto}
+.photo-quiz-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+.photo-quiz-heading h2{font-size:23px;margin:0 0 7px}.photo-quiz-heading p{font-size:14px;margin:0;color:#78715d}
+.photo-quiz-question{display:grid;grid-template-columns:minmax(200px,1fr) minmax(0,1.2fr);gap:24px;align-items:center;border:1px solid #d8cbb5;border-radius:9px;padding:24px;background:#fffdf8}
+.photo-quiz-image{display:flex;align-items:center;justify-content:center;min-height:300px;background:#f3efe1;border-radius:50% 50% 8px 8px}
+.photo-quiz-image .cocktail-photo{width:100%;height:310px;max-width:310px;margin:0}.photo-quiz-image img{object-fit:contain;width:100%;height:100%}
+.photo-quiz-prompt h3{font-size:21px;margin:0 0 18px}.photo-quiz-options{display:grid;gap:10px}
+.photo-quiz-options button{display:flex;gap:12px;align-items:center;text-align:left;width:100%;font-size:16px;padding:14px;background:#fbf8f0;border:1px solid #d3c7b0;border-radius:6px;opacity:1;color:#40392e}
+.photo-quiz-options button>span{font-size:12px;color:#8c816c}.photo-quiz-options button>b{margin-left:auto;font-size:12px}
+.photo-quiz-options .is-correct{background:#eaf0de;border-color:#7c8b59}.photo-quiz-options .is-wrong{background:#f5e2dd;border-color:#b16552}
+.photo-quiz-feedback{margin-top:16px;padding:18px;border:1px solid #c8ccb3;border-radius:8px;background:#fafbf5}.photo-quiz-feedback h3{font-size:20px;margin:0 0 12px}.photo-quiz-feedback h3 small{font-size:14px;font-weight:400;color:#7d715f}
+.photo-quiz-feedback del{color:#b44235}.photo-quiz-feedback .qr-recipe{margin:12px 0}
+.photo-quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:16px}.photo-quiz-footer a{color:#75516a}
+.photo-quiz-end{padding:35px;border:1px solid #d3c6ad;border-radius:8px;background:#fffdf8}.photo-quiz-end p{font-size:20px}
+@media(max-width:600px){
+ .bottle-strip>.bottle-row{grid-template-columns:minmax(0,1fr);gap:4px}
+ .bottle-strip>.bottle-row>.bottle-tile{grid-template-columns:110px minmax(0,1fr);padding:8px 12px;min-height:170px}
+ .bottle-strip>.bottle-row>.bottle-tile>.bottle-photo{height:165px}
+ .ingredient-table th>small{margin-left:6px;font-size:12px}
+ .photo-quiz-question{grid-template-columns:minmax(0,1fr);gap:16px;padding:16px}.photo-quiz-image{min-height:210px}.photo-quiz-image .cocktail-photo{height:225px;max-width:225px}
+ .photo-quiz-prompt h3{font-size:19px;margin-bottom:12px}.photo-quiz-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.photo-quiz-options button{flex-wrap:wrap;gap:5px 8px;padding:11px;font-size:14px}
+ .photo-quiz-feedback{padding:13px}.photo-quiz-footer{flex-wrap:wrap}.photo-quiz-heading h2{font-size:21px}
+}
+
+/* Keep previous/next recipes immediately below the cocktail portrait. */
+.catalog-side{grid-area:portrait;min-width:0;position:sticky;top:18px;align-self:start}
+.catalog-side>.catalog-portrait{position:static;margin:0}
+.catalog-side .recipe-navigation{display:grid;gap:10px;margin-top:12px}
+.catalog-side .recipe-adjacent{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:6px 8px;margin:0}
+.catalog-side .recipe-navigation-label{grid-column:1/-1;font-size:13px;font-weight:600;color:#59644a;line-height:1.4}
+.catalog-side .recipe-adjacent>a,.catalog-side .recipe-adjacent>[aria-disabled]{min-width:0;max-width:none;justify-content:center;padding:6px 8px;line-height:1.5}
+@media(max-width:800px){.catalog-side{position:static}}
+@media print{.catalog-side{display:none}}
+
+/* Use one numeric face and a compact, aligned answer recipe in every quiz. */
+.qr-qty{font-family:Pretendard,system-ui,sans-serif;font-size:inherit;font-style:normal;font-weight:650;font-variant-numeric:lining-nums tabular-nums}
+.qr-qty .qty-number{font:inherit;font-variant-numeric:inherit}
+.qr-recipe{font:500 16px/1.6 Pretendard,system-ui,sans-serif;border:1px solid #d7d6c5;border-left:3px solid #858a62;border-radius:6px;color:#484936}
+.qr-recipe>h4{font-size:17px;line-height:1.5;font-weight:650;color:#484936;margin:0 0 8px}
+.qr-recipe>h4 small{font-size:12px;font-weight:400}
+.qr-recipe .qr-ingredients{font-size:16px;gap:0;margin:0!important}
+.qr-recipe .qr-ingredients>li{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:8px;padding:2px 0;border:0}
+.qr-recipe .qr-ingredients>li:last-child{border-bottom:0}
+.qr-recipe .qr-ingredients>li>:first-child{min-width:0;overflow-wrap:anywhere}
+.qr-recipe .qr-ingredient-text{min-width:0;text-align:left;white-space:normal;word-break:keep-all;overflow-wrap:anywhere}
+.qr-recipe .qr-ingredient-photo{display:flex;align-items:center;justify-content:center;flex:0 0 64px;width:64px;height:100px;min-height:0;padding:3px;border:0;border-radius:5px;background:transparent;cursor:zoom-in}
+.qr-recipe .qr-ingredient-photo:hover{background:#fffcf5}
+.qr-recipe .qr-ingredient-photo:focus-visible{outline:2px solid #70415f;outline-offset:2px}
+.qr-recipe .qr-ingredient-photo .bottle-photo{display:block;width:100%;height:100%;max-width:100%;object-fit:contain;margin:0}
+.qr-recipe .qr-ingredient-photo svg{width:100%;height:100%}
+.qr-recipe .qr-ingredient-text .qr-finish{display:block}
+.qr-recipe .qr-finish{font-size:13px}
+.qr-recipe .qr-meta{display:flex;flex-wrap:wrap;font-size:16px;font-weight:500;gap:3px 12px;margin:6px 0 0;padding-top:6px;border-top:1px solid #d7d6c5}
+.qr-recipe .qr-meta>div{display:flex;flex:0 1 auto;gap:4px;align-items:baseline;min-width:0}
+.qr-recipe .qr-meta dt{flex:0 0 auto;font-size:14px;line-height:1.6;padding:0;white-space:nowrap}
+.qr-recipe .qr-meta dd{line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.photo-quiz-feedback{font:400 16px/1.6 Pretendard,system-ui,sans-serif;overflow-wrap:anywhere;--note-aside-size:16px}
+.photo-quiz-feedback>h3{font-size:17px;font-weight:650;line-height:1.5}
+.photo-quiz-feedback .lesson-introduction .note-aside{font-size:16px;overflow-wrap:anywhere}
+
+.qr-recipe{display:block}
+.qr-recipe::after{display:none}
+.photo-quiz-feedback>.qr-recipe{margin:6px 0}
+
+/* Quiz recipes: three ingredient/amount pairs per row, with short dividers. */
+.qr-recipes{grid-template-columns:minmax(0,1fr)}
+.qr-recipe{container-type:inline-size}
+.qr-recipe .qr-ingredients{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 20px}
+.qr-recipe .qr-ingredients>li{position:relative;align-content:start;min-width:0}
+.qr-recipe .qr-ingredients>li:not(:nth-child(3n + 1))::before{content:"";position:absolute;left:-11px;top:calc(50% - 8px);height:16px;width:1px;background:#c9c3af}
+.qr-recipe .qr-hit small{display:none}
+.qr-recipe .qr-hit{padding:0}
+@container (max-width:580px){
+ .qr-recipe .qr-ingredients{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .qr-recipe .qr-ingredients>li::before{display:none}
+ .qr-recipe .qr-ingredients>li:nth-child(2n)::before{content:"";display:block;position:absolute;left:-11px;top:calc(50% - 8px);height:16px;width:1px;background:#c9c3af}
+}
+@container (max-width:340px){
+ .qr-recipe .qr-ingredients{grid-template-columns:minmax(0,1fr);gap:0}
+ .qr-recipe .qr-ingredients>li:nth-child(n)::before{display:none}
+}
+
+/* Relevant notebook annotations are open directly below every quiz answer. */
+.qr-context-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--note-card-gap,8px);align-items:start}
+.qr-context-card{min-width:0;padding:var(--note-box-padding,9px 11px);border:1px solid #dcd6c3;border-left:3px solid #8a8d60;border-radius:6px;background:#f8f6ed;overflow-wrap:anywhere}
+.qr-context-card.qr-context-mnemonic{border-color:#dfd2da;border-left-color:#936d82;background:#f7f0f3}
+.qr-review .qr-context-card>h5{font:650 15px/1.55 Pretendard,system-ui,sans-serif;color:#646947;margin:0 0 4px}
+.qr-review .qr-context-mnemonic>h5{font:400 var(--note-aside-size,16px)/1.5 'KNPS Kkomi',sans-serif;color:#805137}
+.qr-review .qr-context-card>p{font-size:15px;line-height:1.6;margin:4px 0 0}
+.qr-review .qr-context-card>.lesson-annotation{font:400 var(--note-aside-size,16px)/1.5 'KNPS Kkomi',sans-serif;color:#815c3c}
+.qr-review .qr-context-card>:first-child{margin-top:0}.qr-review .qr-context-card>:last-child{margin-bottom:0}
+.qr-context-notes+.qr-nearby{margin-top:12px}
+@media(max-width:650px){.qr-context-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Keep each answer and its notes together; common exam questions have no unrelated recipe. */
+.qr-recipe>.qr-context-notes{margin-top:10px;padding-top:10px;border-top:1px solid #d7d6c5}
+.qr-recipe>.qr-explanation{margin:8px 0 0;font-weight:400}
+.qr-nearby{margin-top:12px;padding-top:10px;border-top:1px solid #d9cdb5}
+.qr-common-card{padding:var(--note-box-padding,9px 11px);border:1px solid #d7d6c5;border-left:3px solid #858a62;border-radius:6px;background:#f2f0e6}
+.qr-common-card .qr-correction{margin:0;padding:0;border:0}
+.qr-common-answers{margin:0;padding-left:22px;font-size:16px;line-height:1.65}
+.qr-common-answers>li{padding:2px 0}
+.qr-common-details{border-top:1px solid #d7d6c5;margin-top:8px;padding-top:8px;font-size:15px}
+.qr-common-details>p:first-child{margin-top:0}.qr-common-details>p:last-child{margin-bottom:0}

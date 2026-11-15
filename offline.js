@@ -1,4 +1,6 @@
 (() => {
+ const legacyPage=location.pathname.split('/').pop();
+ if(['tequila.html','materials.html'].includes(legacyPage)){location.replace('memory.html'+location.search+'#notebook/'+location.hash.slice(1));return;}
  const el=document.getElementById('offline-status');
  if(location.protocol==='file:'){el.textContent='로컬 파일 모드 · 실행 파일 이용 권장';return;}
  if(!('serviceWorker' in navigator)){el.textContent='로컬 서버로 오프라인 사용 가능';return;}
